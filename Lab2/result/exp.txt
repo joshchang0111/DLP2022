@@ -1,0 +1,742 @@
+
+Experiment: hidden_dim
+Dataset	lr   	hidden units	activation	best epoch
+linear 	0.01	          10	sigmoid   	     24053
+linear 	0.01	          10	sigmoid   	     24690
+linear 	0.01	          10	sigmoid   	     13494
+linear 	0.01	          10	sigmoid   	      8713
+linear 	0.01	          10	sigmoid   	     99999
+linear 	0.01	          10	sigmoid   	     29338
+linear 	0.01	          10	sigmoid   	     99999
+linear 	0.01	          10	sigmoid   	     99999
+linear 	0.01	          10	sigmoid   	     81232
+linear 	0.01	          10	sigmoid   	     42615
+linear 	0.01	          20	sigmoid   	     13760
+linear 	0.01	          20	sigmoid   	     17606
+linear 	0.01	          20	sigmoid   	     66548
+linear 	0.01	          20	sigmoid   	     16808
+linear 	0.01	          20	sigmoid   	     13536
+linear 	0.01	          20	sigmoid   	     18083
+linear 	0.01	          20	sigmoid   	     16827
+linear 	0.01	          20	sigmoid   	     12568
+linear 	0.01	          20	sigmoid   	     50611
+linear 	0.01	          20	sigmoid   	     99999
+linear 	0.01	          30	sigmoid   	     12473
+linear 	0.01	          30	sigmoid   	     41744
+linear 	0.01	          30	sigmoid   	     34988
+linear 	0.01	          30	sigmoid   	     99999
+linear 	0.01	          30	sigmoid   	     99999
+linear 	0.01	          30	sigmoid   	      4332
+linear 	0.01	          30	sigmoid   	       106
+linear 	0.01	          30	sigmoid   	     99999
+linear 	0.01	          30	sigmoid   	      3442
+linear 	0.01	          30	sigmoid   	      4237
+linear 	0.01	          40	sigmoid   	      3911
+linear 	0.01	          40	sigmoid   	      4882
+linear 	0.01	          40	sigmoid   	     14704
+linear 	0.01	          40	sigmoid   	      4351
+linear 	0.01	          40	sigmoid   	     99999
+linear 	0.01	          40	sigmoid   	     51883
+linear 	0.01	          40	sigmoid   	      3356
+linear 	0.01	          40	sigmoid   	     99999
+linear 	0.01	          40	sigmoid   	     25925
+linear 	0.01	          40	sigmoid   	     99999
+linear 	0.01	          50	sigmoid   	      6506
+linear 	0.01	          50	sigmoid   	     99999
+linear 	0.01	          50	sigmoid   	      9906
+linear 	0.01	          50	sigmoid   	     83247
+linear 	0.01	          50	sigmoid   	     32323
+linear 	0.01	          50	sigmoid   	      3902
+linear 	0.01	          50	sigmoid   	     11212
+linear 	0.01	          50	sigmoid   	     99999
+linear 	0.01	          50	sigmoid   	     99999
+linear 	0.01	          50	sigmoid   	     99999
+linear 	0.01	          60	sigmoid   	      6637
+linear 	0.01	          60	sigmoid   	     11262
+linear 	0.01	          60	sigmoid   	     34872
+linear 	0.01	          60	sigmoid   	      4625
+linear 	0.01	          60	sigmoid   	     99999
+linear 	0.01	          60	sigmoid   	     21435
+linear 	0.01	          60	sigmoid   	     99999
+linear 	0.01	          60	sigmoid   	     99999
+linear 	0.01	          60	sigmoid   	     99999
+linear 	0.01	          60	sigmoid   	     41865
+linear 	0.01	          70	sigmoid   	      4698
+linear 	0.01	          70	sigmoid   	     27793
+linear 	0.01	          70	sigmoid   	     99999
+linear 	0.01	          70	sigmoid   	     91337
+linear 	0.01	          70	sigmoid   	      6011
+linear 	0.01	          70	sigmoid   	     99999
+linear 	0.01	          70	sigmoid   	     99999
+linear 	0.01	          70	sigmoid   	     55177
+linear 	0.01	          70	sigmoid   	     39504
+linear 	0.01	          70	sigmoid   	     99999
+linear 	0.01	          80	sigmoid   	      6338
+linear 	0.01	          80	sigmoid   	     99999
+linear 	0.01	          80	sigmoid   	      7003
+linear 	0.01	          80	sigmoid   	     11488
+linear 	0.01	          80	sigmoid   	     56080
+linear 	0.01	          80	sigmoid   	     16207
+linear 	0.01	          80	sigmoid   	      3259
+linear 	0.01	          80	sigmoid   	     32178
+linear 	0.01	          80	sigmoid   	      1491
+linear 	0.01	          80	sigmoid   	     99999
+linear 	0.01	          90	sigmoid   	     78831
+linear 	0.01	          90	sigmoid   	     17218
+linear 	0.01	          90	sigmoid   	     87475
+linear 	0.01	          90	sigmoid   	     99999
+linear 	0.01	          90	sigmoid   	      1847
+linear 	0.01	          90	sigmoid   	     17572
+linear 	0.01	          90	sigmoid   	     99999
+linear 	0.01	          90	sigmoid   	     99999
+linear 	0.01	          90	sigmoid   	      4235
+linear 	0.01	          90	sigmoid   	     11207
+linear 	0.01	         100	sigmoid   	      4802
+linear 	0.01	         100	sigmoid   	     53274
+linear 	0.01	         100	sigmoid   	     99999
+linear 	0.01	         100	sigmoid   	     32789
+linear 	0.01	         100	sigmoid   	     20737
+linear 	0.01	         100	sigmoid   	     99307
+linear 	0.01	         100	sigmoid   	     99999
+linear 	0.01	         100	sigmoid   	     72004
+linear 	0.01	         100	sigmoid   	      9509
+linear 	0.01	         100	sigmoid   	      2578
+
+Experiment: hidden_dim
+Dataset	lr   	hidden units	activation	best epoch
+linear 	0.07	          10	sigmoid   	      3437
+linear 	0.07	          10	sigmoid   	      3528
+linear 	0.07	          10	sigmoid   	      1928
+linear 	0.07	          10	sigmoid   	      1247
+linear 	0.07	          10	sigmoid   	     59643
+linear 	0.07	          10	sigmoid   	      4191
+linear 	0.07	          10	sigmoid   	     36898
+linear 	0.07	          10	sigmoid   	     99999
+linear 	0.07	          10	sigmoid   	     11605
+linear 	0.07	          10	sigmoid   	      6090
+linear 	0.07	          20	sigmoid   	      1966
+linear 	0.07	          20	sigmoid   	      2516
+linear 	0.07	          20	sigmoid   	      9507
+linear 	0.07	          20	sigmoid   	      2401
+linear 	0.07	          20	sigmoid   	      1935
+linear 	0.07	          20	sigmoid   	      2584
+linear 	0.07	          20	sigmoid   	      2405
+linear 	0.07	          20	sigmoid   	      1794
+linear 	0.07	          20	sigmoid   	      7230
+linear 	0.07	          20	sigmoid   	     20109
+linear 	0.07	          30	sigmoid   	      1783
+linear 	0.07	          30	sigmoid   	      5964
+linear 	0.07	          30	sigmoid   	      4999
+linear 	0.07	          30	sigmoid   	     37089
+linear 	0.07	          30	sigmoid   	     23010
+linear 	0.07	          30	sigmoid   	       620
+linear 	0.07	          30	sigmoid   	        14
+linear 	0.07	          30	sigmoid   	     48090
+linear 	0.07	          30	sigmoid   	       493
+linear 	0.07	          30	sigmoid   	       607
+linear 	0.07	          40	sigmoid   	       559
+linear 	0.07	          40	sigmoid   	     13886
+linear 	0.07	          40	sigmoid   	      2102
+linear 	0.07	          40	sigmoid   	       622
+linear 	0.07	          40	sigmoid   	     53400
+linear 	0.07	          40	sigmoid   	      7413
+linear 	0.07	          40	sigmoid   	       480
+linear 	0.07	          40	sigmoid   	     24482
+linear 	0.07	          40	sigmoid   	      3704
+linear 	0.07	          40	sigmoid   	     25064
+linear 	0.07	          50	sigmoid   	       931
+linear 	0.07	          50	sigmoid   	     50415
+linear 	0.07	          50	sigmoid   	      1417
+linear 	0.07	          50	sigmoid   	     11893
+linear 	0.07	          50	sigmoid   	      4620
+linear 	0.07	          50	sigmoid   	       558
+linear 	0.07	          50	sigmoid   	      1604
+linear 	0.07	          50	sigmoid   	     34370
+linear 	0.07	          50	sigmoid   	     99999
+linear 	0.07	          50	sigmoid   	     99999
+linear 	0.07	          60	sigmoid   	       950
+linear 	0.07	          60	sigmoid   	      1609
+linear 	0.07	          60	sigmoid   	      4986
+linear 	0.07	          60	sigmoid   	       661
+linear 	0.07	          60	sigmoid   	     23721
+linear 	0.07	          60	sigmoid   	      3062
+linear 	0.07	          60	sigmoid   	     70909
+linear 	0.07	          60	sigmoid   	     99999
+linear 	0.07	          60	sigmoid   	     26126
+linear 	0.07	          60	sigmoid   	      5983
+linear 	0.07	          70	sigmoid   	       671
+linear 	0.07	          70	sigmoid   	      3973
+linear 	0.07	          70	sigmoid   	     17286
+linear 	0.07	          70	sigmoid   	     13048
+linear 	0.07	          70	sigmoid   	       862
+linear 	0.07	          70	sigmoid   	     87954
+linear 	0.07	          70	sigmoid   	     99999
+linear 	0.07	          70	sigmoid   	      7882
+linear 	0.07	          70	sigmoid   	      5645
+linear 	0.07	          70	sigmoid   	     27666
+linear 	0.07	          80	sigmoid   	       906
+linear 	0.07	          80	sigmoid   	     26088
+linear 	0.07	          80	sigmoid   	      1000
+linear 	0.07	          80	sigmoid   	      1641
+linear 	0.07	          80	sigmoid   	      8010
+linear 	0.07	          80	sigmoid   	      2315
+linear 	0.07	          80	sigmoid   	       465
+linear 	0.07	          80	sigmoid   	      4601
+linear 	0.07	          80	sigmoid   	       214
+linear 	0.07	          80	sigmoid   	     23435
+linear 	0.07	          90	sigmoid   	     11265
+linear 	0.07	          90	sigmoid   	      2463
+linear 	0.07	          90	sigmoid   	     12501
+linear 	0.07	          90	sigmoid   	     54793
+linear 	0.07	          90	sigmoid   	       264
+linear 	0.07	          90	sigmoid   	      2512
+linear 	0.07	          90	sigmoid   	     48547
+linear 	0.07	          90	sigmoid   	     68515
+linear 	0.07	          90	sigmoid   	       605
+linear 	0.07	          90	sigmoid   	      1601
+linear 	0.07	         100	sigmoid   	       685
+linear 	0.07	         100	sigmoid   	      7612
+linear 	0.07	         100	sigmoid   	     26743
+linear 	0.07	         100	sigmoid   	      4687
+linear 	0.07	         100	sigmoid   	      2962
+linear 	0.07	         100	sigmoid   	     14192
+linear 	0.07	         100	sigmoid   	     75226
+linear 	0.07	         100	sigmoid   	     10288
+linear 	0.07	         100	sigmoid   	      1359
+linear 	0.07	         100	sigmoid   	       368
+
+Experiment: hidden_dim
+Dataset	lr   	hidden units	activation	best epoch
+linear 	0.1	          10	sigmoid   	      2406
+linear 	0.1	          10	sigmoid   	      2470
+linear 	0.1	          10	sigmoid   	      1350
+linear 	0.1	          10	sigmoid   	       873
+linear 	0.1	          10	sigmoid   	     41751
+linear 	0.1	          10	sigmoid   	      2934
+linear 	0.1	          10	sigmoid   	     25829
+linear 	0.1	          10	sigmoid   	     73024
+linear 	0.1	          10	sigmoid   	      8123
+linear 	0.1	          10	sigmoid   	      4263
+linear 	0.1	          20	sigmoid   	      1376
+linear 	0.1	          20	sigmoid   	      1762
+linear 	0.1	          20	sigmoid   	      6655
+linear 	0.1	          20	sigmoid   	      1681
+linear 	0.1	          20	sigmoid   	      1355
+linear 	0.1	          20	sigmoid   	      1809
+linear 	0.1	          20	sigmoid   	      1684
+linear 	0.1	          20	sigmoid   	      1256
+linear 	0.1	          20	sigmoid   	      5061
+linear 	0.1	          20	sigmoid   	     14076
+linear 	0.1	          30	sigmoid   	      1249
+linear 	0.1	          30	sigmoid   	      4175
+linear 	0.1	          30	sigmoid   	      3500
+linear 	0.1	          30	sigmoid   	     25963
+linear 	0.1	          30	sigmoid   	     16107
+linear 	0.1	          30	sigmoid   	       434
+linear 	0.1	          30	sigmoid   	         9
+linear 	0.1	          30	sigmoid   	     33662
+linear 	0.1	          30	sigmoid   	       346
+linear 	0.1	          30	sigmoid   	       425
+linear 	0.1	          40	sigmoid   	       391
+linear 	0.1	          40	sigmoid   	      9721
+linear 	0.1	          40	sigmoid   	      1472
+linear 	0.1	          40	sigmoid   	       436
+linear 	0.1	          40	sigmoid   	     37380
+linear 	0.1	          40	sigmoid   	      5189
+linear 	0.1	          40	sigmoid   	       336
+linear 	0.1	          40	sigmoid   	     17137
+linear 	0.1	          40	sigmoid   	      2593
+linear 	0.1	          40	sigmoid   	     17545
+linear 	0.1	          50	sigmoid   	       652
+linear 	0.1	          50	sigmoid   	     35294
+linear 	0.1	          50	sigmoid   	       992
+linear 	0.1	          50	sigmoid   	      8325
+linear 	0.1	          50	sigmoid   	      3235
+linear 	0.1	          50	sigmoid   	       391
+linear 	0.1	          50	sigmoid   	      1124
+linear 	0.1	          50	sigmoid   	     24058
+linear 	0.1	          50	sigmoid   	     97963
+linear 	0.1	          50	sigmoid   	     99999
+linear 	0.1	          60	sigmoid   	       665
+linear 	0.1	          60	sigmoid   	      1127
+linear 	0.1	          60	sigmoid   	      3491
+linear 	0.1	          60	sigmoid   	       463
+linear 	0.1	          60	sigmoid   	     16605
+linear 	0.1	          60	sigmoid   	      2143
+linear 	0.1	          60	sigmoid   	     49637
+linear 	0.1	          60	sigmoid   	     88833
+linear 	0.1	          60	sigmoid   	     18289
+linear 	0.1	          60	sigmoid   	      4189
+linear 	0.1	          70	sigmoid   	       470
+linear 	0.1	          70	sigmoid   	      2782
+linear 	0.1	          70	sigmoid   	     12101
+linear 	0.1	          70	sigmoid   	      9134
+linear 	0.1	          70	sigmoid   	       604
+linear 	0.1	          70	sigmoid   	     61569
+linear 	0.1	          70	sigmoid   	     99999
+linear 	0.1	          70	sigmoid   	      5517
+linear 	0.1	          70	sigmoid   	      3952
+linear 	0.1	          70	sigmoid   	     19367
+linear 	0.1	          80	sigmoid   	       634
+linear 	0.1	          80	sigmoid   	     18263
+linear 	0.1	          80	sigmoid   	       700
+linear 	0.1	          80	sigmoid   	      1149
+linear 	0.1	          80	sigmoid   	      5607
+linear 	0.1	          80	sigmoid   	      1621
+linear 	0.1	          80	sigmoid   	       326
+linear 	0.1	          80	sigmoid   	      3222
+linear 	0.1	          80	sigmoid   	       151
+linear 	0.1	          80	sigmoid   	     16404
+linear 	0.1	          90	sigmoid   	      7886
+linear 	0.1	          90	sigmoid   	      1725
+linear 	0.1	          90	sigmoid   	      8752
+linear 	0.1	          90	sigmoid   	     38355
+linear 	0.1	          90	sigmoid   	       185
+linear 	0.1	          90	sigmoid   	      1759
+linear 	0.1	          90	sigmoid   	     33983
+linear 	0.1	          90	sigmoid   	     47962
+linear 	0.1	          90	sigmoid   	       423
+linear 	0.1	          90	sigmoid   	      1121
+linear 	0.1	         100	sigmoid   	       479
+linear 	0.1	         100	sigmoid   	      5329
+linear 	0.1	         100	sigmoid   	     18720
+linear 	0.1	         100	sigmoid   	      3282
+linear 	0.1	         100	sigmoid   	      2074
+linear 	0.1	         100	sigmoid   	      9936
+linear 	0.1	         100	sigmoid   	     52659
+linear 	0.1	         100	sigmoid   	      7202
+linear 	0.1	         100	sigmoid   	       951
+linear 	0.1	         100	sigmoid   	       257
+
+Experiment: hidden_dim
+Dataset	lr   	hidden units	activation	best epoch
+xor    	0.1	          10	sigmoid   	     29354
+xor    	0.1	          10	sigmoid   	     32004
+xor    	0.1	          10	sigmoid   	      7987
+xor    	0.1	          10	sigmoid   	      8858
+xor    	0.1	          10	sigmoid   	      8267
+xor    	0.1	          10	sigmoid   	     10026
+xor    	0.1	          10	sigmoid   	      8431
+xor    	0.1	          10	sigmoid   	     11269
+xor    	0.1	          10	sigmoid   	     14129
+xor    	0.1	          10	sigmoid   	      9028
+xor    	0.1	          20	sigmoid   	      5536
+xor    	0.1	          20	sigmoid   	      6082
+xor    	0.1	          20	sigmoid   	      5445
+xor    	0.1	          20	sigmoid   	      5702
+xor    	0.1	          20	sigmoid   	      6810
+xor    	0.1	          20	sigmoid   	      6370
+xor    	0.1	          20	sigmoid   	      5696
+xor    	0.1	          20	sigmoid   	      5227
+xor    	0.1	          20	sigmoid   	      6427
+xor    	0.1	          20	sigmoid   	     14078
+xor    	0.1	          30	sigmoid   	      4011
+xor    	0.1	          30	sigmoid   	      4327
+xor    	0.1	          30	sigmoid   	      4166
+xor    	0.1	          30	sigmoid   	      6158
+xor    	0.1	          30	sigmoid   	      4975
+xor    	0.1	          30	sigmoid   	      1138
+xor    	0.1	          30	sigmoid   	      4344
+xor    	0.1	          30	sigmoid   	      3346
+xor    	0.1	          30	sigmoid   	      5183
+xor    	0.1	          30	sigmoid   	      5178
+xor    	0.1	          40	sigmoid   	      4974
+xor    	0.1	          40	sigmoid   	      1339
+xor    	0.1	          40	sigmoid   	      1313
+xor    	0.1	          40	sigmoid   	      4915
+xor    	0.1	          40	sigmoid   	      3565
+xor    	0.1	          40	sigmoid   	      1540
+xor    	0.1	          40	sigmoid   	      3567
+xor    	0.1	          40	sigmoid   	      2043
+xor    	0.1	          40	sigmoid   	      5933
+xor    	0.1	          40	sigmoid   	      3816
+xor    	0.1	          50	sigmoid   	      3614
+xor    	0.1	          50	sigmoid   	      2678
+xor    	0.1	          50	sigmoid   	       858
+xor    	0.1	          50	sigmoid   	      2138
+xor    	0.1	          50	sigmoid   	      2002
+xor    	0.1	          50	sigmoid   	      1594
+xor    	0.1	          50	sigmoid   	      3870
+xor    	0.1	          50	sigmoid   	      3391
+xor    	0.1	          50	sigmoid   	      3127
+xor    	0.1	          50	sigmoid   	      3216
+xor    	0.1	          60	sigmoid   	      2032
+xor    	0.1	          60	sigmoid   	      3288
+xor    	0.1	          60	sigmoid   	      2872
+xor    	0.1	          60	sigmoid   	      2044
+xor    	0.1	          60	sigmoid   	       231
+xor    	0.1	          60	sigmoid   	      3263
+xor    	0.1	          60	sigmoid   	      2460
+xor    	0.1	          60	sigmoid   	       488
+xor    	0.1	          60	sigmoid   	      1165
+xor    	0.1	          60	sigmoid   	      2544
+xor    	0.1	          70	sigmoid   	      2615
+xor    	0.1	          70	sigmoid   	      2664
+xor    	0.1	          70	sigmoid   	      3396
+xor    	0.1	          70	sigmoid   	      8024
+xor    	0.1	          70	sigmoid   	      1617
+xor    	0.1	          70	sigmoid   	      2977
+xor    	0.1	          70	sigmoid   	      2398
+xor    	0.1	          70	sigmoid   	      2582
+xor    	0.1	          70	sigmoid   	      2050
+xor    	0.1	          70	sigmoid   	      2572
+xor    	0.1	          80	sigmoid   	       330
+xor    	0.1	          80	sigmoid   	      3677
+xor    	0.1	          80	sigmoid   	      1734
+xor    	0.1	          80	sigmoid   	      2103
+xor    	0.1	          80	sigmoid   	       570
+xor    	0.1	          80	sigmoid   	      2313
+xor    	0.1	          80	sigmoid   	      2457
+xor    	0.1	          80	sigmoid   	      1406
+xor    	0.1	          80	sigmoid   	      2056
+xor    	0.1	          80	sigmoid   	     99999
+xor    	0.1	          90	sigmoid   	     17553
+xor    	0.1	          90	sigmoid   	       864
+xor    	0.1	          90	sigmoid   	      1207
+xor    	0.1	          90	sigmoid   	       795
+xor    	0.1	          90	sigmoid   	      2453
+xor    	0.1	          90	sigmoid   	       423
+xor    	0.1	          90	sigmoid   	     10758
+xor    	0.1	          90	sigmoid   	       426
+xor    	0.1	          90	sigmoid   	       652
+xor    	0.1	          90	sigmoid   	      1963
+xor    	0.1	         100	sigmoid   	      1650
+xor    	0.1	         100	sigmoid   	      8733
+xor    	0.1	         100	sigmoid   	      1530
+xor    	0.1	         100	sigmoid   	      1272
+xor    	0.1	         100	sigmoid   	      1463
+xor    	0.1	         100	sigmoid   	      1130
+xor    	0.1	         100	sigmoid   	      2226
+xor    	0.1	         100	sigmoid   	       498
+xor    	0.1	         100	sigmoid   	      2083
+xor    	0.1	         100	sigmoid   	     91467
+
+Experiment: hidden_dim
+Dataset	lr   	hidden units	activation	best epoch
+linear 	0.1	          10	sigmoid   	      2406
+linear 	0.1	          10	sigmoid   	      1515
+linear 	0.1	          10	sigmoid   	      1362
+linear 	0.1	          10	sigmoid   	      1808
+linear 	0.1	          10	sigmoid   	      2254
+linear 	0.1	          10	sigmoid   	      1656
+linear 	0.1	          10	sigmoid   	      1809
+linear 	0.1	          10	sigmoid   	      1484
+linear 	0.1	          10	sigmoid   	      1737
+linear 	0.1	          10	sigmoid   	      2366
+linear 	0.1	          20	sigmoid   	      1376
+linear 	0.1	          20	sigmoid   	      1006
+linear 	0.1	          20	sigmoid   	      1065
+linear 	0.1	          20	sigmoid   	      1357
+linear 	0.1	          20	sigmoid   	       902
+linear 	0.1	          20	sigmoid   	      1265
+linear 	0.1	          20	sigmoid   	      1790
+linear 	0.1	          20	sigmoid   	      1700
+linear 	0.1	          20	sigmoid   	      1581
+linear 	0.1	          20	sigmoid   	      1120
+linear 	0.1	          30	sigmoid   	      1249
+linear 	0.1	          30	sigmoid   	       815
+linear 	0.1	          30	sigmoid   	       821
+linear 	0.1	          30	sigmoid   	       673
+linear 	0.1	          30	sigmoid   	      1016
+linear 	0.1	          30	sigmoid   	      1196
+linear 	0.1	          30	sigmoid   	       894
+linear 	0.1	          30	sigmoid   	      1143
+linear 	0.1	          30	sigmoid   	       730
+linear 	0.1	          30	sigmoid   	      1090
+linear 	0.1	          40	sigmoid   	       391
+linear 	0.1	          40	sigmoid   	       283
+linear 	0.1	          40	sigmoid   	      1053
+linear 	0.1	          40	sigmoid   	       729
+linear 	0.1	          40	sigmoid   	      1281
+linear 	0.1	          40	sigmoid   	       871
+linear 	0.1	          40	sigmoid   	      1253
+linear 	0.1	          40	sigmoid   	       590
+linear 	0.1	          40	sigmoid   	       581
+linear 	0.1	          40	sigmoid   	       721
+linear 	0.1	          50	sigmoid   	       652
+linear 	0.1	          50	sigmoid   	       658
+linear 	0.1	          50	sigmoid   	       615
+linear 	0.1	          50	sigmoid   	     99999
+linear 	0.1	          50	sigmoid   	       738
+linear 	0.1	          50	sigmoid   	      3050
+linear 	0.1	          50	sigmoid   	       536
+linear 	0.1	          50	sigmoid   	       595
+linear 	0.1	          50	sigmoid   	       191
+linear 	0.1	          50	sigmoid   	       391
+linear 	0.1	          60	sigmoid   	       665
+linear 	0.1	          60	sigmoid   	       412
+linear 	0.1	          60	sigmoid   	       555
+linear 	0.1	          60	sigmoid   	      1216
+linear 	0.1	          60	sigmoid   	       653
+linear 	0.1	          60	sigmoid   	       397
+linear 	0.1	          60	sigmoid   	       690
+linear 	0.1	          60	sigmoid   	       709
+linear 	0.1	          60	sigmoid   	       808
+linear 	0.1	          60	sigmoid   	       711
+linear 	0.1	          70	sigmoid   	       470
+linear 	0.1	          70	sigmoid   	       507
+linear 	0.1	          70	sigmoid   	       388
+linear 	0.1	          70	sigmoid   	       411
+linear 	0.1	          70	sigmoid   	      1580
+linear 	0.1	          70	sigmoid   	       596
+linear 	0.1	          70	sigmoid   	       534
+linear 	0.1	          70	sigmoid   	       403
+linear 	0.1	          70	sigmoid   	     99999
+linear 	0.1	          70	sigmoid   	       444
+linear 	0.1	          80	sigmoid   	       634
+linear 	0.1	          80	sigmoid   	      1227
+linear 	0.1	          80	sigmoid   	       670
+linear 	0.1	          80	sigmoid   	       294
+linear 	0.1	          80	sigmoid   	       242
+linear 	0.1	          80	sigmoid   	       778
+linear 	0.1	          80	sigmoid   	       516
+linear 	0.1	          80	sigmoid   	      1095
+linear 	0.1	          80	sigmoid   	       499
+linear 	0.1	          80	sigmoid   	       395
+linear 	0.1	          90	sigmoid   	      7886
+linear 	0.1	          90	sigmoid   	       274
+linear 	0.1	          90	sigmoid   	       898
+linear 	0.1	          90	sigmoid   	       361
+linear 	0.1	          90	sigmoid   	      1115
+linear 	0.1	          90	sigmoid   	       369
+linear 	0.1	          90	sigmoid   	     20319
+linear 	0.1	          90	sigmoid   	      1303
+linear 	0.1	          90	sigmoid   	       424
+linear 	0.1	          90	sigmoid   	        95
+linear 	0.1	         100	sigmoid   	       479
+linear 	0.1	         100	sigmoid   	       683
+linear 	0.1	         100	sigmoid   	       179
+linear 	0.1	         100	sigmoid   	       200
+linear 	0.1	         100	sigmoid   	       335
+linear 	0.1	         100	sigmoid   	       146
+linear 	0.1	         100	sigmoid   	       991
+linear 	0.1	         100	sigmoid   	       186
+linear 	0.1	         100	sigmoid   	       722
+linear 	0.1	         100	sigmoid   	       217
+
+Experiment: lr
+Dataset	lr   	hidden units	activation	best epoch
+linear 	0.1	          50	sigmoid   	       652
+linear 	0.1	          50	sigmoid   	       658
+linear 	0.1	          50	sigmoid   	       615
+linear 	0.1	          50	sigmoid   	     99999
+linear 	0.1	          50	sigmoid   	       738
+linear 	0.1	          50	sigmoid   	      3050
+linear 	0.1	          50	sigmoid   	       536
+linear 	0.1	          50	sigmoid   	       595
+linear 	0.1	          50	sigmoid   	       191
+linear 	0.1	          50	sigmoid   	       391
+linear 	0.05	          50	sigmoid   	      1302
+linear 	0.05	          50	sigmoid   	      1314
+linear 	0.05	          50	sigmoid   	      1230
+linear 	0.05	          50	sigmoid   	     99999
+linear 	0.05	          50	sigmoid   	      1476
+linear 	0.05	          50	sigmoid   	      6096
+linear 	0.05	          50	sigmoid   	      1073
+linear 	0.05	          50	sigmoid   	      1191
+linear 	0.05	          50	sigmoid   	       383
+linear 	0.05	          50	sigmoid   	       781
+linear 	0.01	          50	sigmoid   	      6506
+linear 	0.01	          50	sigmoid   	      6568
+linear 	0.01	          50	sigmoid   	      6149
+linear 	0.01	          50	sigmoid   	     99999
+linear 	0.01	          50	sigmoid   	      7382
+linear 	0.01	          50	sigmoid   	     30464
+linear 	0.01	          50	sigmoid   	      5362
+linear 	0.01	          50	sigmoid   	      5955
+linear 	0.01	          50	sigmoid   	      1916
+linear 	0.01	          50	sigmoid   	      3905
+linear 	0.005	          50	sigmoid   	     13011
+linear 	0.005	          50	sigmoid   	     13135
+linear 	0.005	          50	sigmoid   	     12297
+linear 	0.005	          50	sigmoid   	     99999
+linear 	0.005	          50	sigmoid   	     14765
+linear 	0.005	          50	sigmoid   	     60924
+linear 	0.005	          50	sigmoid   	     10724
+linear 	0.005	          50	sigmoid   	     11911
+linear 	0.005	          50	sigmoid   	      3832
+linear 	0.005	          50	sigmoid   	      7809
+
+Experiment: lr
+Dataset	lr   	hidden units	activation	best epoch
+linear 	0.1000	          50	sigmoid   	       652
+linear 	0.1000	          50	sigmoid   	       658
+linear 	0.1000	          50	sigmoid   	       615
+linear 	0.1000	          50	sigmoid   	     99999
+linear 	0.1000	          50	sigmoid   	       738
+linear 	0.1000	          50	sigmoid   	      3050
+linear 	0.1000	          50	sigmoid   	       536
+linear 	0.1000	          50	sigmoid   	       595
+linear 	0.1000	          50	sigmoid   	       191
+linear 	0.1000	          50	sigmoid   	       391
+linear 	0.0500	          50	sigmoid   	      1302
+linear 	0.0500	          50	sigmoid   	      1314
+linear 	0.0500	          50	sigmoid   	      1230
+linear 	0.0500	          50	sigmoid   	     99999
+linear 	0.0500	          50	sigmoid   	      1476
+linear 	0.0500	          50	sigmoid   	      6096
+linear 	0.0500	          50	sigmoid   	      1073
+linear 	0.0500	          50	sigmoid   	      1191
+linear 	0.0500	          50	sigmoid   	       383
+linear 	0.0500	          50	sigmoid   	       781
+linear 	0.0100	          50	sigmoid   	      6506
+linear 	0.0100	          50	sigmoid   	      6568
+linear 	0.0100	          50	sigmoid   	      6149
+linear 	0.0100	          50	sigmoid   	     99999
+linear 	0.0100	          50	sigmoid   	      7382
+linear 	0.0100	          50	sigmoid   	     30464
+linear 	0.0100	          50	sigmoid   	      5362
+linear 	0.0100	          50	sigmoid   	      5955
+linear 	0.0100	          50	sigmoid   	      1916
+linear 	0.0100	          50	sigmoid   	      3905
+linear 	0.0050	          50	sigmoid   	     13011
+linear 	0.0050	          50	sigmoid   	     13135
+linear 	0.0050	          50	sigmoid   	     12297
+linear 	0.0050	          50	sigmoid   	     99999
+linear 	0.0050	          50	sigmoid   	     14765
+linear 	0.0050	          50	sigmoid   	     60924
+linear 	0.0050	          50	sigmoid   	     10724
+linear 	0.0050	          50	sigmoid   	     11911
+linear 	0.0050	          50	sigmoid   	      3832
+linear 	0.0050	          50	sigmoid   	      7809
+
+Experiment: lr
+Dataset	lr   	hidden units	activation	best epoch
+xor    	0.1000	          50	sigmoid   	      3614
+xor    	0.1000	          50	sigmoid   	      2678
+xor    	0.1000	          50	sigmoid   	       858
+xor    	0.1000	          50	sigmoid   	      2138
+xor    	0.1000	          50	sigmoid   	      2002
+xor    	0.1000	          50	sigmoid   	      1594
+xor    	0.1000	          50	sigmoid   	      3870
+xor    	0.1000	          50	sigmoid   	      3391
+xor    	0.1000	          50	sigmoid   	      3127
+xor    	0.1000	          50	sigmoid   	      3216
+xor    	0.0500	          50	sigmoid   	      7227
+xor    	0.0500	          50	sigmoid   	      5354
+xor    	0.0500	          50	sigmoid   	      1714
+xor    	0.0500	          50	sigmoid   	      4274
+xor    	0.0500	          50	sigmoid   	      4002
+xor    	0.0500	          50	sigmoid   	      3189
+xor    	0.0500	          50	sigmoid   	      7738
+xor    	0.0500	          50	sigmoid   	      6782
+xor    	0.0500	          50	sigmoid   	      6252
+xor    	0.0500	          50	sigmoid   	      6431
+xor    	0.0100	          50	sigmoid   	     36128
+xor    	0.0100	          50	sigmoid   	     26761
+xor    	0.0100	          50	sigmoid   	      8560
+xor    	0.0100	          50	sigmoid   	     21370
+xor    	0.0100	          50	sigmoid   	     19998
+xor    	0.0100	          50	sigmoid   	     15947
+xor    	0.0100	          50	sigmoid   	     38675
+xor    	0.0100	          50	sigmoid   	     33909
+xor    	0.0100	          50	sigmoid   	     31254
+xor    	0.0100	          50	sigmoid   	     32146
+xor    	0.0050	          50	sigmoid   	     72255
+xor    	0.0050	          50	sigmoid   	     53520
+xor    	0.0050	          50	sigmoid   	     17118
+xor    	0.0050	          50	sigmoid   	     42740
+xor    	0.0050	          50	sigmoid   	     39994
+xor    	0.0050	          50	sigmoid   	     31894
+xor    	0.0050	          50	sigmoid   	     77347
+xor    	0.0050	          50	sigmoid   	     67818
+xor    	0.0050	          50	sigmoid   	     62507
+xor    	0.0050	          50	sigmoid   	     64291
+
+Experiment: activation
+Dataset	lr   	hidden units	activation	best epoch	accuracy
+linear 	0.1000	          50	none      	      3240	  1.0000
+linear 	0.1000	          50	none      	      2825	  1.0000
+linear 	0.1000	          50	none      	      2871	  1.0000
+linear 	0.1000	          50	none      	      2699	  1.0000
+linear 	0.1000	          50	none      	      3069	  1.0000
+linear 	0.1000	          50	none      	      3365	  1.0000
+linear 	0.1000	          50	none      	      3092	  1.0000
+linear 	0.1000	          50	none      	      3107	  1.0000
+linear 	0.1000	          50	none      	      2752	  1.0000
+linear 	0.1000	          50	none      	      2883	  1.0000
+
+Experiment: activation
+Dataset	lr   	hidden units	activation	best epoch	accuracy
+xor    	0.1000	          50	none      	     99999	  0.7143
+xor    	0.1000	          50	none      	     99999	  0.5238
+xor    	0.1000	          50	none      	     99999	  0.7619
+xor    	0.1000	          50	none      	     99999	  0.5238
+xor    	0.1000	          50	none      	     99999	  0.4762
+xor    	0.1000	          50	none      	     99999	  0.4762
+xor    	0.1000	          50	none      	     99999	  0.5238
+xor    	0.1000	          50	none      	     99999	  0.5714
+xor    	0.1000	          50	none      	     99999	  0.7619
+xor    	0.1000	          50	none      	     99999	  0.4762
+
+Experiment: activation
+Dataset	lr   	hidden units	activation	best epoch	accuracy
+
+Experiment: activation
+Dataset	lr   	hidden units	activation	best epoch	accuracy
+
+Experiment: activation
+Dataset	lr   	hidden units	activation	best epoch	accuracy
+linear 	0.1000	          50	none      	      3240	  1.0000
+linear 	0.1000	          50	none      	      2825	  1.0000
+linear 	0.1000	          50	none      	      2871	  1.0000
+linear 	0.1000	          50	none      	      2699	  1.0000
+linear 	0.1000	          50	none      	      3069	  1.0000
+linear 	0.1000	          50	none      	      3365	  1.0000
+linear 	0.1000	          50	none      	      3092	  1.0000
+linear 	0.1000	          50	none      	      3107	  1.0000
+linear 	0.1000	          50	none      	      2752	  1.0000
+linear 	0.1000	          50	none      	      2883	  1.0000
+
+Experiment: activation
+Dataset	lr   	hidden units	activation	best epoch	accuracy
+xor    	0.1000	          50	none      	     99999	  0.7143
+xor    	0.1000	          50	none      	     99999	  0.5238
+
+Experiment: activation
+Dataset	lr   	hidden units	activation	best epoch	accuracy
+
+Experiment: activation
+Dataset	lr   	hidden units	activation	best epoch	accuracy
+
+Experiment: activation
+Dataset	lr   	hidden units	activation	best epoch	accuracy
+
+Experiment: activation
+Dataset	lr   	hidden units	activation	best epoch	accuracy
+linear 	0.1000	          50	relu      	        96	  1.0000
+linear 	0.1000	          50	relu      	        90	  1.0000
+linear 	0.1000	          50	relu      	       375	  1.0000
+linear 	0.1000	          50	relu      	       162	  1.0000
+linear 	0.1000	          50	relu      	     99999	  0.4200
+linear 	0.1000	          50	relu      	       417	  1.0000
+linear 	0.1000	          50	relu      	       713	  1.0000
+linear 	0.1000	          50	relu      	     99999	  0.4200
+linear 	0.1000	          50	relu      	       184	  1.0000
+linear 	0.1000	          50	relu      	       496	  1.0000
+
+Experiment: activation
+Dataset	lr   	hidden units	activation	best epoch	accuracy
+xor    	0.1000	          50	relu      	       489	  1.0000
+xor    	0.1000	          50	relu      	       264	  1.0000
+xor    	0.1000	          50	relu      	     99999	  0.5238
+xor    	0.1000	          50	relu      	     99999	  0.5238
+xor    	0.1000	          50	relu      	       222	  1.0000
+xor    	0.1000	          50	relu      	       318	  1.0000
+xor    	0.1000	          50	relu      	     99999	  0.5238
+xor    	0.1000	          50	relu      	       255	  1.0000
+xor    	0.1000	          50	relu      	     99999	  0.5238
+xor    	0.1000	          50	relu      	     99999	  0.5238
+
+Experiment: activation
+Dataset	lr   	hidden units	activation	best epoch	accuracy
+xor    	0.1000	          50	relu      	       653	  1.0000
+xor    	0.1000	          50	relu      	       227	  1.0000
+xor    	0.1000	          50	relu      	     99999	  0.5238
+xor    	0.1000	          50	relu      	       211	  1.0000
+xor    	0.1000	          50	relu      	     99999	  0.5238
+xor    	0.1000	          50	relu      	     99999	  0.5238
+xor    	0.1000	          50	relu      	       764	  1.0000
+xor    	0.1000	          50	relu      	       556	  1.0000
+xor    	0.1000	          50	relu      	       455	  1.0000
+xor    	0.1000	          50	relu      	       448	  1.0000
