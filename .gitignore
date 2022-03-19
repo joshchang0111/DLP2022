@@ -1,4 +1,3 @@
 .*
 *.pptx
-Lab2/src/data/__pycache__/
-Lab2/src/models/__pycache__/
+*/*/*/__pycache__/
