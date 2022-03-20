@@ -54,16 +54,26 @@ def show_experiment(args, epochs, acc):
 
 def plot_sigmoid():
 	x = np.linspace(-10, 10, 100)
+	"""
 	y = 1 / (1 + np.exp(-x))
 	z = np.multiply(y, 1.0 - y)
   
 	plt.plot(x, y, label="sigmoid")
 	plt.plot(x, z, label="sigmoid derivative")
 	plt.xlabel("x")
-	#plt.ylabel("Sigmoid")
 	plt.legend()
 
 	plt.savefig("../result/sigmoid.png")
+	"""
+	y = np.maximum(0, x)
+	z = (x > 0) * 1
+
+	plt.plot(x, y, label="ReLU")
+	plt.plot(x, z, label="ReLU derivative")
+	plt.xlabel("x")
+	plt.legend()
+
+	plt.savefig("../result/relu.png")
 
 if __name__ == "__main__":
 	plot_sigmoid()
