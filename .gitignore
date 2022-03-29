@@ -1,4 +1,5 @@
 .*
 *.pptx
+*.docx
 *.zip
 */*/*/__pycache__/
