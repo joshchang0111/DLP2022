@@ -26,6 +26,7 @@
 #include <sstream>
 #include <fstream>
 #include <cmath>
+#include <cstring> // NEW: for comparing char array (argv) with c++ string
 
 /**
  * output streams
@@ -290,7 +291,7 @@ class board {
 
 		std::vector<int> get_empty_index() {
 			/**
-			 * Return the indices of empty tiles on the board.
+			 * NEW: Return the indices of empty tiles on the board.
 			 */
 			std::vector<int> empty_idx;
 			for (int i = 0; i < 16; i++) { // Iterate through all tile indices
@@ -302,7 +303,7 @@ class board {
 
 		void popup_specific(int tile_idx, int power) {
 			/**
-			 * Pop up 2^(power) at index == tile_idx.
+			 * NEW: Pop up 2^(power) at index == tile_idx.
 			 */
 			set(tile_idx, power);
 		}
@@ -737,8 +738,8 @@ class learning {
 
 					// Iterate all possible s''
 					float value = 0;
-					float prob_2 = 9 / (10 * empty_idx.size());
-					float prob_4 = 1 / (10 * empty_idx.size());
+					float prob_2 = 9 / (10. * empty_idx.size());
+					float prob_4 = 1 / (10. * empty_idx.size());
 					
 					for (int i = 0; i < empty_idx.size(); i++) {
 						board s_prime2_2 = s_prime1; // The one to popup 2
@@ -781,12 +782,13 @@ class learning {
 			// TODO
 			/**
 			 * TD backup step.
-			 * Update strategy: V(S_t) = V(S_t) + alpha * (R_{t + 1} + V(S_{t + 1}) - V(S_t)))
+			 * Update strategy: V(S_t) = V(S_t) + alpha * (R_{t + 1} + gamma * V(S_{t + 1}) - V(S_t)))
 			 */
 			float value_s_prime2 = 0; // Save for backup
 			for (path.pop_back(); path.size(); path.pop_back()) {
 				state &move = path.back(); // Get the latest state
-				float error = value_s_prime2 - estimate(move.before_state());
+				float gamma = 1; // discount factor
+				float error = gamma * value_s_prime2 - estimate(move.before_state());
 				float new_value = alpha * (move.reward() + error); // new value for current (before) state
 				value_s_prime2 = update(move.before_state(), new_value); // update and get the updated value of current (before) state
 			}
@@ -811,26 +813,32 @@ class learning {
 		 *  '93.7%': 93.7% (937 games) reached 8192-tiles in last 1000 games (a.k.a. win rate of 8192-tile)
 		 *  '22.4%': 22.4% (224 games) terminated with 8192-tiles (the largest) in last 1000 games
 		 */
-		void make_statistic(size_t n, const board& b, int score, int unit = 1000) {
+		std::vector<float> make_statistic(size_t n, const board& b, int score, int unit = 1000) {
+			/**
+			 * Modification:
+			 * 	- return mean, max for each episode
+			 *  - only display training process every 1000 episodes
+			 */
 			scores.push_back(score);
 			maxtile.push_back(0);
 			for (int i = 0; i < 16; i++) {
 				maxtile.back() = std::max(maxtile.back(), b.at(i));
 			}
 	
+			int sum = std::accumulate(scores.begin(), scores.end(), 0);
+			int max = *std::max_element(scores.begin(), scores.end());
+			int stat[16] = { 0 };
+			for (int i = 0; i < 16; i++) {
+				stat[i] = std::count(maxtile.begin(), maxtile.end(), i);
+			}
+			float mean = float(sum) / unit;
+			float coef = 100.0 / unit;
+			float win_rate_2048 = 0; // NEW
 			if (n % unit == 0) { // show the training process
 				if (scores.size() != size_t(unit) || maxtile.size() != size_t(unit)) {
 					error << "wrong statistic size for show statistics" << std::endl;
 					std::exit(2);
 				}
-				int sum = std::accumulate(scores.begin(), scores.end(), 0);
-				int max = *std::max_element(scores.begin(), scores.end());
-				int stat[16] = { 0 };
-				for (int i = 0; i < 16; i++) {
-					stat[i] = std::count(maxtile.begin(), maxtile.end(), i);
-				}
-				float mean = float(sum) / unit;
-				float coef = 100.0 / unit;
 				info << n;
 				info << "\t" "mean = " << mean;
 				info << "\t" "max = " << max;
@@ -840,10 +848,22 @@ class learning {
 					int accu = std::accumulate(stat + t, stat + 16, 0);
 					info << "\t" << ((1 << t) & -2u) << "\t" << (accu * coef) << "%";
 					info << "\t(" << (stat[t] * coef) << "%)" << std::endl;
+
+					// NEW: record win rate of 2048
+					if (t == 11)
+						win_rate_2048 = (accu * coef);
 				}
 				scores.clear();
 				maxtile.clear();
 			}
+
+			// NEW: use a vector to store the statistics
+			std::vector<float> statistic;
+			statistic.push_back(mean);
+			statistic.push_back(max);
+			statistic.push_back(win_rate_2048);
+
+			return statistic;
 		}
 	
 		/**
@@ -904,12 +924,21 @@ class learning {
 };
 
 int main(int argc, const char* argv[]) {
+	// Parse args
+	std::vector<std::string> args(argv, argv + argc);
+	std::string mode = args[1];
+	std::string experiment("original/");
+	if (args.size() >= 3) {
+		experiment = args[2];
+	}
+
 	info << "TDL2048-Demo" << std::endl;
 	learning tdl;
 
 	// set the learning parameters
-	float alpha = 0.1;
-	size_t total = 100000;
+	float alpha = 0.05; //0.1;
+	size_t total = 500000; //100000;
+	int unit = 1000;
 	unsigned seed;
 	__asm__ __volatile__ ("rdtsc" : "=a" (seed));
 	info << "alpha = " << alpha << std::endl;
@@ -923,43 +952,101 @@ int main(int argc, const char* argv[]) {
 	tdl.add_feature(new pattern({ 0, 1, 2, 4, 5, 6 }));
 	tdl.add_feature(new pattern({ 4, 5, 6, 8, 9, 10 }));
 
-	// restore the model from file
-	tdl.load("");
+	// restore the model from file (if in demo mode)
+	if (mode == "demo") {
+		info << "\nDemo...\n";
+		info << "Loading pre-trained model...\n";
+		tdl.load("../checkpoints/" + experiment + "best_model.bin");
 
-	// train the model
-	std::vector<state> path;
-	path.reserve(20000);
-	for (size_t n = 1; n <= total; n++) {
-		board b;
-		int score = 0;
+		std::vector<state> path;
+		path.reserve(20000);
+		for (size_t n = 1; n <= unit; n++) {
+			board b;
+			int score = 0;
 
-		// play an episode
-		debug << "begin episode" << std::endl;
-		b.init();
-		while (true) {
-			debug << "state" << std::endl << b;
-			state best = tdl.select_best_move(b);
-			path.push_back(best);
+			// play an episode
+			debug << "begin episode" << std::endl;
+			b.init();
+			while (true) {
+				debug << "state" << std::endl << b;
+				state best = tdl.select_best_move(b);
+				path.push_back(best);
 
-			if (best.is_valid()) {
-				debug << "best " << best;
-				score += best.reward();
-				b = best.after_state();
-				b.popup();
-			} else {
-				break;
+				if (best.is_valid()) {
+					debug << "best " << best;
+					score += best.reward();
+					b = best.after_state();
+					b.popup();
+				} else {
+					break;
+				}
 			}
-		}
-		debug << "end episode" << std::endl;
+			debug << "end episode" << std::endl;
 
-		// update by TD(0)
-		tdl.update_episode(path, alpha);
-		tdl.make_statistic(n, b, score);
-		path.clear();
+			std::vector<float> statistic = tdl.make_statistic(n, b, score, unit);
+		}
+		return 0;
 	}
 
-	// store the model into file
-	tdl.save("");
+	// train the model
+	if (mode == "train") {
+		info << "\nTraining the model...\n";
+		float best_win_rate_2048 = 0;
 
-	return 0;
+		// Create statistic file
+		std::string stat_path("../result/" + experiment + "statistic.txt");
+		std::ofstream stat_file;
+		stat_file.open(stat_path);
+		if (!stat_file.is_open()) {
+			info << "Fail to open statistic file!" << std::endl;
+			return 0;
+		}
+		stat_file << "episode\tmean\tmax\n";
+
+		// Training loops
+		std::vector<state> path;
+		path.reserve(20000);
+		for (size_t n = 1; n <= total; n++) {
+			board b;
+			int score = 0;
+
+			// play an episode
+			debug << "begin episode" << std::endl;
+			b.init();
+			while (true) {
+				debug << "state" << std::endl << b;
+				state best = tdl.select_best_move(b);
+				path.push_back(best);
+
+				if (best.is_valid()) {
+					debug << "best " << best;
+					score += best.reward();
+					b = best.after_state();
+					b.popup();
+				} else {
+					break;
+				}
+			}
+			debug << "end episode" << std::endl;
+
+			// update by TD(0)
+			tdl.update_episode(path, alpha);
+			std::vector<float> statistic = tdl.make_statistic(n, b, score, unit);
+			path.clear();
+
+			// NEW: write statistics of each episode to file
+			stat_file << n << "\t" << statistic[0] << "\t" << statistic[1] << std::endl;
+
+			// Save the model based on best 2048 win rate
+			if (n % unit == 0) {
+				if (statistic[2] > best_win_rate_2048) {
+					info << "\nSaving model with best 2048-tile win rate in 1000 games...\n";
+					best_win_rate_2048 = statistic[2];
+					tdl.save("../checkpoints/" + experiment + "best_model.bin");
+				}
+			}
+		}
+		stat_file.close();
+		return 0;
+	}
 }

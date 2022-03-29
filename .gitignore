@@ -3,3 +3,4 @@
 *.docx
 *.zip
 */*/*/__pycache__/
+*/checkpoints
