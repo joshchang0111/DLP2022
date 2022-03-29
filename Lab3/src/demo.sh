@@ -1,3 +1,2 @@
-#./test demo
-#./test demo n-tuple/
-#./test demo disc-fac/
+#./2048 demo
+#./2048 demo n-tuple/

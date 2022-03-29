@@ -936,7 +936,7 @@ int main(int argc, const char* argv[]) {
 	learning tdl;
 
 	// set the learning parameters
-	float alpha = 0.05; //0.1;
+	float alpha = 0.1;
 	size_t total = 500000; //100000;
 	int unit = 1000;
 	unsigned seed;
@@ -1001,7 +1001,7 @@ int main(int argc, const char* argv[]) {
 			info << "Fail to open statistic file!" << std::endl;
 			return 0;
 		}
-		stat_file << "episode\tmean\tmax\n";
+		stat_file << "episode\tmean\tmax\t2048_win_rate\n";
 
 		// Training loops
 		std::vector<state> path;
@@ -1035,7 +1035,7 @@ int main(int argc, const char* argv[]) {
 			path.clear();
 
 			// NEW: write statistics of each episode to file
-			stat_file << n << "\t" << statistic[0] << "\t" << statistic[1] << std::endl;
+			stat_file << n << "\t" << statistic[0] << "\t" << statistic[1] << "\t" << statistic[2] << std::endl;
 
 			// Save the model based on best 2048 win rate
 			if (n % unit == 0) {

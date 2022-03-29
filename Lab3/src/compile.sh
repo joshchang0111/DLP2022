@@ -1,1 +1,1 @@
-g++ -std=c++11 -O3 -o test 2048.cpp
+g++ -std=c++11 -O3 -o 2048 2048.cpp

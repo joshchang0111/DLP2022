@@ -1,3 +1,2 @@
-./test train
-#./test train n-tuple/
-#./test train disc-fac/
+./2048 train
+#./2048 train n-tuple/
