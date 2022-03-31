@@ -787,10 +787,8 @@ class learning {
 			float value_s_prime2 = 0; // Save for backup
 			for (path.pop_back(); path.size(); path.pop_back()) {
 				state &move = path.back(); // Get the latest state
-				float gamma = 1; // discount factor
-				float error = gamma * value_s_prime2 - estimate(move.before_state());
-				float new_value = alpha * (move.reward() + error); // new value for current (before) state
-				value_s_prime2 = update(move.before_state(), new_value); // update and get the updated value of current (before) state
+				float error = move.reward() + value_s_prime2 - estimate(move.before_state());
+				value_s_prime2 = update(move.before_state(), alpha * error);
 			}
 		}
 	
@@ -936,7 +934,7 @@ int main(int argc, const char* argv[]) {
 	learning tdl;
 
 	// set the learning parameters
-	float alpha = 0.1;
+	float alpha = 0.05; //0.0025; //0.01;
 	size_t total = 500000; //100000;
 	int unit = 1000;
 	unsigned seed;
@@ -947,10 +945,23 @@ int main(int argc, const char* argv[]) {
 	std::srand(seed);
 
 	// initialize the features
+	/** Original
 	tdl.add_feature(new pattern({ 0, 1, 2, 3, 4, 5 }));
 	tdl.add_feature(new pattern({ 4, 5, 6, 7, 8, 9 }));
 	tdl.add_feature(new pattern({ 0, 1, 2, 4, 5, 6 }));
 	tdl.add_feature(new pattern({ 4, 5, 6, 8, 9, 10 }));
+	*/
+	tdl.add_feature(new pattern({ 1, 5, 6 }));
+	tdl.add_feature(new pattern({ 0, 1, 2, 5 }));
+	tdl.add_feature(new pattern({ 0, 1, 2, 5, 9 }));
+	tdl.add_feature(new pattern({ 0, 4, 5, 8, 9, 10 }));
+
+	/**
+	tdl.add_feature(new pattern({ 0, 1, 2, 5, 9 }));
+	tdl.add_feature(new pattern({ 6, 10, 11, 13, 14 }));
+	tdl.add_feature(new pattern({ 1, 2, 5, 6, 9 }));
+	tdl.add_feature(new pattern({ 0, 1, 2, 5 }));
+	*/
 
 	// restore the model from file (if in demo mode)
 	if (mode == "demo") {

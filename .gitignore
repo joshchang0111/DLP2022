@@ -4,3 +4,4 @@
 *.zip
 */*/*/__pycache__/
 */checkpoints
+Lab3/src/train1.sh
