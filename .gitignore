@@ -1,7 +1,6 @@
 .*
-*.pptx
 *.docx
 *.zip
 */*/*/__pycache__/
 */checkpoints
-Lab3/src/train1.sh
+Lab3/src/2048_sample.cpp
