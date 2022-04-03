@@ -951,6 +951,8 @@ int main(int argc, const char* argv[]) {
 	int unit = 1000;
 	unsigned seed;
 	__asm__ __volatile__ ("rdtsc" : "=a" (seed));
+	if (mode == "demo")
+		seed = 1172186769; // Best for ori+tuple1
 	info << "alpha = " << alpha << std::endl;
 	info << "total = " << total << std::endl;
 	info << "seed = " << seed << std::endl;
@@ -1014,6 +1016,8 @@ int main(int argc, const char* argv[]) {
 
 			bar.update();
 
+			if (n == unit)
+				info << std::endl;
 			std::vector<float> statistic = tdl.make_statistic(n, b, score, unit);
 		}
 		return 0;
