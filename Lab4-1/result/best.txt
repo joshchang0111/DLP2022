@@ -1,0 +1,228 @@
+Model      	activation	Learning Rate	Best Epoch	Test Acc.
+EEGNet     	relu      	      1.0E-02	       244	   0.8639
+EEGNet     	leaky_relu	      1.0E-02	       258	   0.8602
+EEGNet     	elu       	      1.0E-02	        99	   0.8500
+DeepConvNet	relu      	      1.0E-02	       246	   0.8148
+DeepConvNet	leaky_relu	      1.0E-02	       284	   0.8269
+DeepConvNet	elu       	      1.0E-02	       193	   0.8157
+EEGNet     	relu      	      5.0E-03	       238	   0.8491
+EEGNet     	leaky_relu	      5.0E-03	       263	   0.8611
+EEGNet     	elu       	      5.0E-03	       299	   0.8481
+DeepConvNet	relu      	      5.0E-03	       284	   0.8130
+DeepConvNet	leaky_relu	      5.0E-03	       294	   0.8296
+DeepConvNet	elu       	      5.0E-03	       161	   0.8111
+EEGNet     	relu      	      2.0E-03	       209	   0.8787
+EEGNet     	leaky_relu	      2.0E-03	       218	   0.8667
+EEGNet     	elu       	      2.0E-03	       284	   0.8241
+DeepConvNet	relu      	      2.0E-03	       262	   0.8241
+DeepConvNet	leaky_relu	      2.0E-03	       135	   0.8093
+DeepConvNet	elu       	      2.0E-03	       139	   0.8074
+EEGNet     	relu      	      1.0E-03	       236	   0.8787
+EEGNet     	leaky_relu	      1.0E-03	       239	   0.8509
+EEGNet     	elu       	      1.0E-03	       278	   0.8509
+DeepConvNet	relu      	      1.0E-03	       279	   0.8139
+DeepConvNet	leaky_relu	      1.0E-03	       280	   0.8278
+DeepConvNet	elu       	      1.0E-03	       143	   0.8111
+EEGNet     	relu      	      5.0E-04	       115	   0.8639
+EEGNet     	leaky_relu	      5.0E-04	       260	   0.8657
+EEGNet     	elu       	      5.0E-04	       203	   0.8259
+DeepConvNet	relu      	      5.0E-04	       247	   0.8176
+DeepConvNet	leaky_relu	      5.0E-04	       250	   0.8269
+DeepConvNet	elu       	      5.0E-04	       121	   0.8157
+EEGNet     	relu      	      2.0E-04	       180	   0.8787
+EEGNet     	leaky_relu	      2.0E-04	       213	   0.8815
+EEGNet     	elu       	      2.0E-04	       184	   0.8398
+DeepConvNet	relu      	      2.0E-04	       288	   0.8176
+DeepConvNet	leaky_relu	      2.0E-04	       178	   0.8139
+DeepConvNet	elu       	      2.0E-04	       217	   0.8074
+EEGNet     	relu      	      1.0E-04	       279	   0.8815
+EEGNet     	leaky_relu	      1.0E-04	       167	   0.8676
+EEGNet     	elu       	      1.0E-04	       208	   0.8472
+DeepConvNet	relu      	      1.0E-04	       230	   0.8194
+DeepConvNet	leaky_relu	      1.0E-04	        91	   0.8222
+DeepConvNet	elu       	      1.0E-04	       183	   0.8083
+
+=== w/o batch norm ===
+EEGNet     	relu      	      1.0E-02	       220	   0.7824
+EEGNet     	leaky_relu	      1.0E-02	       232	   0.7806
+EEGNet     	elu       	      1.0E-02	       293	   0.7565
+DeepConvNet	relu      	      1.0E-02	       184	   0.8204
+DeepConvNet	leaky_relu	      1.0E-02	        81	   0.8324
+DeepConvNet	elu       	      1.0E-02	        50	   0.8259
+EEGNet     	relu      	      1.0E-02	       155	   0.7444
+EEGNet     	leaky_relu	      1.0E-02	       293	   0.7657
+EEGNet     	elu       	      1.0E-02	        32	   0.8046
+DeepConvNet	relu      	      1.0E-02	       220	   0.8194
+DeepConvNet	leaky_relu	      1.0E-02	       175	   0.8296
+DeepConvNet	elu       	      1.0E-02	       173	   0.8231
+EEGNet     	relu      	      1.0E-02	       276	   0.7713
+EEGNet     	leaky_relu	      1.0E-02	       295	   0.7769
+EEGNet     	elu       	      1.0E-02	       298	   0.7639
+DeepConvNet	relu      	      1.0E-02	       288	   0.8269
+DeepConvNet	leaky_relu	      1.0E-02	       110	   0.8380
+DeepConvNet	elu       	      1.0E-02	       272	   0.8120
+EEGNet     	relu      	      1.0E-02	       286	   0.8083
+EEGNet     	leaky_relu	      1.0E-02	       236	   0.7907
+EEGNet     	elu       	      1.0E-02	       225	   0.7796
+DeepConvNet	relu      	      1.0E-02	       159	   0.8259
+DeepConvNet	leaky_relu	      1.0E-02	        83	   0.8417
+DeepConvNet	elu       	      1.0E-02	       239	   0.8167
+EEGNet     	relu      	      1.0E-02	        35	   0.8037
+EEGNet     	leaky_relu	      1.0E-02	       238	   0.7407
+EEGNet     	elu       	      1.0E-02	       243	   0.7750
+DeepConvNet	relu      	      1.0E-02	       296	   0.8343
+DeepConvNet	leaky_relu	      1.0E-02	       197	   0.8380
+DeepConvNet	elu       	      1.0E-02	        74	   0.8194
+EEGNet     	relu      	      1.0E-02	        46	   0.7972
+EEGNet     	leaky_relu	      1.0E-02	       257	   0.7972
+EEGNet     	elu       	      1.0E-02	       217	   0.7741
+DeepConvNet	relu      	      1.0E-02	       150	   0.8444
+DeepConvNet	leaky_relu	      1.0E-02	       202	   0.8333
+DeepConvNet	elu       	      1.0E-02	       205	   0.8204
+EEGNet     	relu      	      1.0E-02	       284	   0.7981
+EEGNet     	leaky_relu	      1.0E-02	        90	   0.8019
+EEGNet     	elu       	      1.0E-02	       271	   0.8139
+DeepConvNet	relu      	      1.0E-02	       120	   0.8333
+DeepConvNet	leaky_relu	      1.0E-02	       148	   0.8352
+DeepConvNet	elu       	      1.0E-02	       223	   0.8361
+EEGNet     	relu      	      1.0E-02	       182	   0.7824
+EEGNet     	leaky_relu	      1.0E-02	       182	   0.7546
+EEGNet     	elu       	      1.0E-02	       213	   0.7713
+DeepConvNet	relu      	      1.0E-02	       155	   0.8417
+DeepConvNet	leaky_relu	      1.0E-02	       165	   0.8250
+DeepConvNet	elu       	      1.0E-02	       247	   0.8185
+EEGNet     	relu      	      1.0E-02	        66	   0.7926
+EEGNet     	leaky_relu	      1.0E-02	       219	   0.7898
+EEGNet     	elu       	      1.0E-02	       260	   0.7694
+DeepConvNet	relu      	      1.0E-02	       198	   0.8231
+DeepConvNet	leaky_relu	      1.0E-02	        58	   0.8241
+DeepConvNet	elu       	      1.0E-02	        66	   0.8194
+EEGNet     	relu      	      1.0E-02	       230	   0.7778
+EEGNet     	leaky_relu	      1.0E-02	       239	   0.8056
+EEGNet     	elu       	      1.0E-02	        94	   0.7926
+DeepConvNet	relu      	      1.0E-02	       144	   0.8278
+DeepConvNet	leaky_relu	      1.0E-02	       209	   0.8324
+DeepConvNet	elu       	      1.0E-02	       212	   0.8194
+
+=== dropout experiment ===
+Model      	activation	Learning Rate	Dropout	Best Epoch	Test Acc.
+EEGNet     	relu      	      1.0E-02	 0.2500	       156	   0.8694
+EEGNet     	leaky_relu	      1.0E-02	 0.2500	       298	   0.8472
+EEGNet     	elu       	      1.0E-02	 0.2500	       232	   0.8463
+DeepConvNet	relu      	      1.0E-02	 0.5000	       119	   0.8333
+DeepConvNet	leaky_relu	      1.0E-02	 0.5000	       109	   0.8352
+DeepConvNet	elu       	      1.0E-02	 0.5000	       240	   0.8250
+EEGNet     	relu      	      1.0E-02	 0.2500	       288	   0.8769
+EEGNet     	leaky_relu	      1.0E-02	 0.2500	       155	   0.8704
+EEGNet     	elu       	      1.0E-02	 0.2500	       201	   0.8407
+DeepConvNet	relu      	      1.0E-02	 0.5000	       172	   0.8398
+DeepConvNet	leaky_relu	      1.0E-02	 0.5000	       214	   0.8352
+DeepConvNet	elu       	      1.0E-02	 0.5000	        49	   0.8250
+EEGNet     	relu      	      1.0E-02	 0.2500	       152	   0.8667
+EEGNet     	leaky_relu	      1.0E-02	 0.2500	       292	   0.8694
+EEGNet     	elu       	      1.0E-02	 0.2500	       105	   0.8380
+DeepConvNet	relu      	      1.0E-02	 0.5000	       212	   0.8370
+DeepConvNet	leaky_relu	      1.0E-02	 0.5000	       223	   0.8287
+DeepConvNet	elu       	      1.0E-02	 0.5000	       235	   0.8296
+EEGNet     	relu      	      1.0E-02	 0.2500	       272	   0.8639
+EEGNet     	leaky_relu	      1.0E-02	 0.2500	       213	   0.8537
+EEGNet     	elu       	      1.0E-02	 0.2500	       131	   0.8417
+DeepConvNet	relu      	      1.0E-02	 0.5000	       280	   0.8435
+DeepConvNet	leaky_relu	      1.0E-02	 0.5000	       123	   0.8417
+DeepConvNet	elu       	      1.0E-02	 0.5000	       297	   0.8324
+EEGNet     	relu      	      1.0E-02	 0.2500	       247	   0.8750
+EEGNet     	leaky_relu	      1.0E-02	 0.2500	       181	   0.8611
+EEGNet     	elu       	      1.0E-02	 0.2500	       279	   0.8250
+DeepConvNet	relu      	      1.0E-02	 0.5000	       281	   0.8306
+DeepConvNet	leaky_relu	      1.0E-02	 0.5000	       269	   0.8306
+DeepConvNet	elu       	      1.0E-02	 0.5000	       242	   0.8139
+EEGNet     	relu      	      1.0E-02	 0.2500	       282	   0.8639
+EEGNet     	leaky_relu	      1.0E-02	 0.2500	       260	   0.8694
+EEGNet     	elu       	      1.0E-02	 0.2500	       125	   0.8481
+DeepConvNet	relu      	      1.0E-02	 0.5000	       199	   0.8343
+DeepConvNet	leaky_relu	      1.0E-02	 0.5000	       211	   0.8306
+DeepConvNet	elu       	      1.0E-02	 0.5000	        95	   0.8222
+EEGNet     	relu      	      1.0E-02	 0.2500	       267	   0.8667
+EEGNet     	leaky_relu	      1.0E-02	 0.2500	       146	   0.8620
+EEGNet     	elu       	      1.0E-02	 0.2500	        91	   0.8463
+DeepConvNet	relu      	      1.0E-02	 0.5000	       230	   0.8296
+DeepConvNet	leaky_relu	      1.0E-02	 0.5000	        95	   0.8315
+DeepConvNet	elu       	      1.0E-02	 0.5000	       252	   0.8185
+EEGNet     	relu      	      1.0E-02	 0.2500	       201	   0.8611
+EEGNet     	leaky_relu	      1.0E-02	 0.2500	       265	   0.8639
+EEGNet     	elu       	      1.0E-02	 0.2500	       276	   0.8278
+DeepConvNet	relu      	      1.0E-02	 0.5000	       231	   0.8417
+DeepConvNet	leaky_relu	      1.0E-02	 0.5000	       220	   0.8324
+DeepConvNet	elu       	      1.0E-02	 0.5000	       258	   0.8278
+EEGNet     	relu      	      1.0E-02	 0.2500	       237	   0.8704
+EEGNet     	leaky_relu	      1.0E-02	 0.2500	       163	   0.8657
+EEGNet     	elu       	      1.0E-02	 0.2500	       244	   0.8398
+DeepConvNet	relu      	      1.0E-02	 0.5000	       132	   0.8278
+DeepConvNet	leaky_relu	      1.0E-02	 0.5000	       280	   0.8435
+DeepConvNet	elu       	      1.0E-02	 0.5000	       164	   0.8231
+EEGNet     	relu      	      1.0E-02	 0.2500	        66	   0.8611
+EEGNet     	leaky_relu	      1.0E-02	 0.2500	       283	   0.8593
+EEGNet     	elu       	      1.0E-02	 0.2500	       223	   0.8463
+DeepConvNet	relu      	      1.0E-02	 0.5000	        97	   0.8287
+DeepConvNet	leaky_relu	      1.0E-02	 0.5000	       149	   0.8361
+DeepConvNet	elu       	      1.0E-02	 0.5000	       293	   0.8269
+EEGNet     	relu      	      1.0E-02	 0.0000	       220	   0.8417
+EEGNet     	leaky_relu	      1.0E-02	 0.0000	        36	   0.8398
+EEGNet     	elu       	      1.0E-02	 0.0000	       104	   0.8287
+DeepConvNet	relu      	      1.0E-02	 0.0000	        19	   0.8037
+DeepConvNet	leaky_relu	      1.0E-02	 0.0000	        13	   0.8009
+DeepConvNet	elu       	      1.0E-02	 0.0000	         5	   0.7769
+EEGNet     	relu      	      1.0E-02	 0.0000	       197	   0.8472
+EEGNet     	leaky_relu	      1.0E-02	 0.0000	       188	   0.8324
+EEGNet     	elu       	      1.0E-02	 0.0000	        43	   0.8204
+DeepConvNet	relu      	      1.0E-02	 0.0000	        11	   0.7750
+DeepConvNet	leaky_relu	      1.0E-02	 0.0000	        14	   0.7898
+DeepConvNet	elu       	      1.0E-02	 0.0000	        17	   0.7750
+EEGNet     	relu      	      1.0E-02	 0.0000	       170	   0.8463
+EEGNet     	leaky_relu	      1.0E-02	 0.0000	        49	   0.8370
+EEGNet     	elu       	      1.0E-02	 0.0000	       259	   0.8398
+DeepConvNet	relu      	      1.0E-02	 0.0000	        10	   0.7963
+DeepConvNet	leaky_relu	      1.0E-02	 0.0000	        13	   0.7944
+DeepConvNet	elu       	      1.0E-02	 0.0000	         7	   0.7778
+EEGNet     	relu      	      1.0E-02	 0.0000	       299	   0.8491
+EEGNet     	leaky_relu	      1.0E-02	 0.0000	        91	   0.8426
+EEGNet     	elu       	      1.0E-02	 0.0000	       216	   0.8157
+DeepConvNet	relu      	      1.0E-02	 0.0000	        19	   0.7833
+DeepConvNet	leaky_relu	      1.0E-02	 0.0000	        11	   0.7583
+DeepConvNet	elu       	      1.0E-02	 0.0000	         5	   0.7880
+EEGNet     	relu      	      1.0E-02	 0.0000	       291	   0.8583
+EEGNet     	leaky_relu	      1.0E-02	 0.0000	       162	   0.8194
+EEGNet     	elu       	      1.0E-02	 0.0000	       191	   0.8120
+DeepConvNet	relu      	      1.0E-02	 0.0000	        50	   0.7935
+DeepConvNet	leaky_relu	      1.0E-02	 0.0000	         5	   0.8065
+DeepConvNet	elu       	      1.0E-02	 0.0000	         7	   0.7667
+EEGNet     	relu      	      1.0E-02	 0.0000	       145	   0.8546
+EEGNet     	leaky_relu	      1.0E-02	 0.0000	       176	   0.8324
+EEGNet     	elu       	      1.0E-02	 0.0000	        69	   0.8204
+DeepConvNet	relu      	      1.0E-02	 0.0000	        20	   0.7843
+DeepConvNet	leaky_relu	      1.0E-02	 0.0000	         9	   0.7759
+DeepConvNet	elu       	      1.0E-02	 0.0000	        10	   0.7815
+EEGNet     	relu      	      1.0E-02	 0.0000	        71	   0.8472
+EEGNet     	leaky_relu	      1.0E-02	 0.0000	       202	   0.8491
+EEGNet     	elu       	      1.0E-02	 0.0000	       268	   0.8167
+DeepConvNet	relu      	      1.0E-02	 0.0000	         8	   0.7981
+DeepConvNet	leaky_relu	      1.0E-02	 0.0000	        13	   0.7509
+DeepConvNet	elu       	      1.0E-02	 0.0000	        10	   0.7639
+EEGNet     	relu      	      1.0E-02	 0.0000	       211	   0.8333
+EEGNet     	leaky_relu	      1.0E-02	 0.0000	       134	   0.8435
+EEGNet     	elu       	      1.0E-02	 0.0000	       183	   0.8194
+DeepConvNet	relu      	      1.0E-02	 0.0000	        50	   0.7954
+DeepConvNet	leaky_relu	      1.0E-02	 0.0000	        13	   0.7741
+DeepConvNet	elu       	      1.0E-02	 0.0000	         6	   0.7583
+EEGNet     	relu      	      1.0E-02	 0.0000	       124	   0.8269
+EEGNet     	leaky_relu	      1.0E-02	 0.0000	       118	   0.8519
+EEGNet     	elu       	      1.0E-02	 0.0000	       203	   0.8306
+DeepConvNet	relu      	      1.0E-02	 0.0000	        17	   0.8000
+DeepConvNet	leaky_relu	      1.0E-02	 0.0000	         8	   0.7463
+DeepConvNet	elu       	      1.0E-02	 0.0000	         3	   0.7852
+EEGNet     	relu      	      1.0E-02	 0.0000	       139	   0.8537
+EEGNet     	leaky_relu	      1.0E-02	 0.0000	       174	   0.8491
+EEGNet     	elu       	      1.0E-02	 0.0000	       148	   0.8046
+DeepConvNet	relu      	      1.0E-02	 0.0000	        13	   0.8000
+DeepConvNet	leaky_relu	      1.0E-02	 0.0000	        49	   0.7630
+DeepConvNet	elu       	      1.0E-02	 0.0000	         4	   0.7926
