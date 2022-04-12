@@ -27,7 +27,7 @@ class DeepConvNet(nn.Module):
 		for idx in range(4):
 			conv_i = nn.Sequential(
 				nn.Conv2d(out_channels[idx], out_channels[idx + 1], kernel_size=kernel_sizes[idx]), 
-				#nn.BatchNorm2d(out_channels[idx + 1]), 
+				nn.BatchNorm2d(out_channels[idx + 1]), 
 				self.activation, 
 				nn.MaxPool2d(kernel_size=(1, 2)), 
 				nn.Dropout(p=self.dropout_p)
