@@ -1,5 +1,5 @@
 # Deep Learning and Practice 2022 Spring Labs
-In this course, there are 8 labs in total.
+In this course, there are 7 labs in total.
 - **Lab1**: Warm-up: Python + Pytorch
 - **Lab2**: Back Propagation
 - **Lab3**: 2048-Temporal Difference Learning

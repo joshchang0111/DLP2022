@@ -5,6 +5,7 @@ import numpy as np
 import matplotlib.pyplot as plt
 
 import torch
+import random
 
 ## Self-defined
 from data.dataloader import *
@@ -22,6 +23,7 @@ def parse_args():
 	parser.add_argument("--dropout", type=float, default=None)
 	parser.add_argument("--model", type=str, default="EEGNet", choices=["EEGNet", "DeepConvNet"])
 	parser.add_argument("--report_every", type=int, default=10, help="Display results every 10 epochs.")
+	parser.add_argument("--seed", type=int, default=None, help="Whether to fix random seed or not.")
 
 	## Others
 	parser.add_argument("--save_plot", action="store_true", help="Whether to save the plot or not")
@@ -43,6 +45,16 @@ if __name__ == "__main__":
 	if device.type != "cuda":
 		print("Not using GPU for training!")
 		raise SystemExit
+
+	## Set random seed (12 for EEGNet/lr1e-4)
+	if args.seed is not None:
+		torch.manual_seed(seed)
+		torch.cuda.manual_seed(seed)
+		torch.cuda.manual_seed_all(seed)
+		np.random.seed(seed)
+		random.seed(seed)
+		torch.backends.cudnn.benchmark = False
+		torch.backends.cudnn.deterministic = True
 
 	## Save experiment results to "best.txt"
 	if not os.path.isfile("{}/best.txt".format(args.result_path)):
