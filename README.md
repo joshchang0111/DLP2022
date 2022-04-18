@@ -4,6 +4,7 @@ In this course, there are 7 labs in total.
 - **Lab2**: Back Propagation
 - **Lab3**: 2048-Temporal Difference Learning
 - **Lab4-1**: EEG Classification
+- **Lab4-2**: Diabetic Retinopathy Detection
 
 ## Environment
 - Ubuntu 20.04.3 LTS

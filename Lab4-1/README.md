@@ -1,4 +1,4 @@
-# Lab4: EEG Classification
+# Lab4-1: EEG Classification
 ## Dependencies
 ```
 ipdb

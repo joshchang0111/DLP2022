@@ -17,6 +17,7 @@ class Trainer:
 		self.device = device
 
 		self.model.to(self.device)
+		ipdb.set_trace()
 
 	def train(self, train_loader, test_loader):
 		"""Train the model"""

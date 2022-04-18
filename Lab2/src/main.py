@@ -8,7 +8,7 @@ from models.trainer import *
 from others.reporter import *
 
 def parse_args():
-	parser = argparse.ArgumentParser(description="Rumor Detection")
+	parser = argparse.ArgumentParser(description="Lab2: Back Propagation")
 
 	## Training options
 	parser.add_argument("-exp_title", action="store_true")
