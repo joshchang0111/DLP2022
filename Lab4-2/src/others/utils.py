@@ -1,4 +1,4 @@
-import ipdb
+import pdb
 import numpy as np
 import matplotlib.pyplot as plt
 from sklearn.metrics import ConfusionMatrixDisplay
@@ -64,48 +64,26 @@ def plot_confusion_matrix(args, labels, preds):
 			)
 
 	plt.colorbar(img)
-	plt.title("Normalized Confusion Matrix")
+	plt.title("Normalized Confusion Matrix (ResNet{})".format(args.model[-2:]))
 	plt.xlabel("Predicted Label")
 	plt.ylabel("True Label")
 
 	pretrained_str = "w" if args.pretrained else "wo"
 
-	plt.savefig("./cm_{}_{}_pretrained.png".format(args.model, pretrained_str))
-
-	## Plot
-	#for i in range(confusion_matrix.shape[0]):
-	#	for j in range(confusion_matrix.shape[1]):
-
-	"""
-	ConfusionMatrixDisplay.from_predictions(
-		y_true=labels,
-		y_pred=preds,
-		labels=list(set(labels.tolist())), 
-		display_labels=list(set(labels.tolist())), 
-		cmap=plt.cm.Blues
-	)
-
-	if args.pretrained:
-		pretrained_str = "w"
-	else:
-		pretrained_str = "wo"
-
-	plt.title("Confusion Matrix")
 	plt.savefig("{}/cm_{}_{}_pretrained.png".format(args.result_path, args.model, pretrained_str))
-	"""
 
 def plot_learning_curves():
 	"""Plot learning curves"""
 	result_dict = {}
 	with open("../result/learning_curves.txt") as f:
-		for line in f.readlines():
+		for line in list(f.readlines())[-4:]:
 			line = line.strip().rstrip()
 			model, pretrained, epochs, train_accs, test_accs = line.split("\t")
 
 			if model not in result_dict:
 				result_dict[model] = {"w  pretrained": {}, "wo pretrained": {}}
 			
-			result_dict[model][pretrained]["epochs"] = np.array(eval(epochs))
+			result_dict[model][pretrained]["epochs"] = np.array(eval(epochs)) + 1
 			result_dict[model][pretrained]["train_accs"] = np.array(eval(train_accs))
 			result_dict[model][pretrained]["test_accs" ] = np.array(eval(test_accs ))
 
@@ -119,14 +97,15 @@ def plot_learning_curves():
 			test_accs  = result_dict[model][pretrained]["test_accs" ]
 
 			pretrained_str = "w/o" if "wo" in pretrained else "with"
-			plt.plot(epochs[:10], train_accs[:10], label="Train ({} pretraining)".format(pretrained_str))
-			plt.plot(epochs[:10],  test_accs[:10], label= "Test ({} pretraining)".format(pretrained_str))
+			plt.plot(epochs[:20], train_accs[:20], label="Train ({} pretraining)".format(pretrained_str))
+			plt.plot(epochs[:20],  test_accs[:20], label= "Test ({} pretraining)".format(pretrained_str))
 
 		plt.legend()
 		plt.xlabel("Epoch")
 		plt.ylabel("Accuracy (%)")
+		plt.xticks([5, 10, 15, 20])
 		plt.title("Result Comparison (ResNet{})".format(model[-2:]))
-		plt.savefig("../result/lr_{}.png".format(model))
+		plt.savefig("../result/basic-normalize/lr_{}.png".format(model))
 
 if __name__ == "__main__":
 	plot_learning_curves()

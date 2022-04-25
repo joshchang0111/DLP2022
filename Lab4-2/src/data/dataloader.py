@@ -1,4 +1,4 @@
-import ipdb
+import pdb
 import numpy as np
 import pandas as pd
 
@@ -67,8 +67,6 @@ class RetinopathyLoader(data.Dataset):
         return len(self.img_name)
 
     def __getitem__(self, index):
-        """something you should implement here"""
-
         """
            step1. Get the image path from 'self.img_name' and load it.
                   hint : path = root + self.img_name[index] + '.jpeg'
@@ -94,10 +92,8 @@ class RetinopathyLoader(data.Dataset):
         transformations = transforms.Compose([
             transforms.RandomHorizontalFlip(), 
             transforms.RandomVerticalFlip(), 
-            #transforms.RandomRotation(), 
-            #transforms.RandomCrop(), 
             transforms.ToTensor(), ## Scales the pixel to the range [0, 1]
-            ## Normalization
+            transforms.Normalize((0.3749, 0.2602, 0.1857),(0.2526, 0.1780, 0.1291)) ## Normalization
         ])
 
         img = Image.open(img_path)

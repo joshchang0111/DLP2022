@@ -26,19 +26,15 @@
 #	#	--train \
 #	#	--seed 123 \
 #	#	--model "$model" \
-#	#	--lr 5e-4 \
 #	#	--bs "$bs" \
-#	#	--optim adam \
 #	#	--save_exp
 #
-#	python main.py \
+#	CUDA_VISIBLE_DEVICES=1 python main.py \
 #		--train \
 #		--seed 123 \
 #		--model "$model" \
 #		--pretrained \
-#		--lr 5e-4 \
 #		--bs "$bs" \
-#		--optim adam \
 #		--save_exp
 #done
 
@@ -61,23 +57,45 @@
 #		--save_confusion_matrix
 #done
 
+#for model in resnet18 resnet50
+#do
+#	python main.py \
+#		--test \
+#		--seed 123 \
+#		--model "$model" \
+#		--bs 32 \
+#		--save_confusion_matrix \
+#		--result_path ../result/basic-normalize \
+#		--checkpoint_path ../checkpoints/basic-normalize
+#
+#	python main.py \
+#		--test \
+#		--seed 123 \
+#		--model "$model" \
+#		--pretrained \
+#		--bs 32 \
+#		--save_confusion_matrix \
+#		--result_path ../result/basic-normalize \
+#		--checkpoint_path ../checkpoints/basic-normalize
+#done
+
 python main.py \
 	--test \
 	--seed 123 \
 	--model resnet50 \
 	--pretrained \
 	--bs 32 \
-	--save_confusion_matrix \
-	--checkpoint_path ../checkpoints/wo_loss_weight
+	--checkpoint_path ../checkpoints/basic-normalize
 
 ###################
 ## Weighted Loss ##
 ###################
+## from scratch
 #for experiment in "model=resnet18 bs=32" "model=resnet50 bs=16"
 #do
 #	eval $experiment
 #
-#	python main.py \
+#	CUDA_VISIBLE_DEVICES=0 python main.py \
 #		--train \
 #		--seed 123 \
 #		--model "$model" \
@@ -85,14 +103,14 @@ python main.py \
 #		--save_exp \
 #		--loss_weight
 #	
-#	python main.py \
-#		--train \
-#		--seed 123 \
-#		--model "$model" \
-#		--pretrained \
-#		--bs "$bs" \
-#		--save_exp \
-#		--loss_weight
+#	#python main.py \
+#	#	--train \
+#	#	--seed 123 \
+#	#	--model "$model" \
+#	#	--pretrained \
+#	#	--bs "$bs" \
+#	#	--save_exp \
+#	#	--loss_weight
 #done
 
 ##########################

@@ -1,5 +1,5 @@
 import os
-import ipdb
+import pdb
 import random
 import argparse
 import numpy as np
@@ -70,6 +70,7 @@ if __name__ == "__main__":
 
 	## Build dataset
 	num_class, loss_weight, train_loader, test_loader = create_dataset(args)
+	#loss_weight = [1, 10, 5, 10, 10]
 
 	## Build model
 	model = build_model(args, num_class)
