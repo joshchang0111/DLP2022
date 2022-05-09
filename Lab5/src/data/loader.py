@@ -33,10 +33,11 @@ def load_train_data(args):
 	return train_data, train_loader, train_iterator, \
 		   valid_data, valid_loader, valid_iterator
 
-def load_test_data(args):
-	print("\nLoading test dataset...")
+def load_test_data(args, test_set="test"):
+	print("\nLoading {} dataset...".format(test_set))
 
-	test_data = bair_robot_pushing_dataset(args, "test")
+	#test_data = bair_robot_pushing_dataset(args, "test")
+	test_data = bair_robot_pushing_dataset(args, test_set)
 
 	test_loader = DataLoader(
 		test_data,

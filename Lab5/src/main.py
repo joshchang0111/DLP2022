@@ -62,6 +62,7 @@ def parse_args():
 	parser.add_argument("--model_dir", default=""          , help="base directory to save logs")
 	parser.add_argument("--data_root", default="../dataset", help="root directory for data")
 	#parser.add_argument("--data_root", default='../data/processed_data', help='root directory for data')
+	parser.add_argument("--test_set" , default="test"      , help="validate/test when test only")
 
 	parser.add_argument("--exp_name", default=None, type=str, help="experiment directory name for saving results")
 	parser.add_argument("--debug", default=False, action="store_true")
@@ -80,6 +81,7 @@ def main():
 		mode = "train"
 	elif args.test:
 		mode = "test"
+		test_set = args.test_set
 
 	## Set device
 	if args.cuda:
@@ -149,7 +151,7 @@ def main():
 		train_data, train_loader, train_iterator, \
 		valid_data, valid_loader, valid_iterator = load_train_data(args)
 	elif mode == "test":
-		test_data, test_loader, test_iterator = load_test_data(args)
+		test_data, test_loader, test_iterator = load_test_data(args, test_set)
 
 	###################
 	## Build Trainer ##
@@ -163,7 +165,7 @@ def main():
 		)
 	elif mode == "test":
 		assert args.model_dir != "", "model_dir should not be empty!"
-		trainer.test(test_data, test_loader, test_iterator)
+		trainer.test(test_data, test_loader, test_iterator, test_set)
 
 if __name__ == '__main__':
 	main()

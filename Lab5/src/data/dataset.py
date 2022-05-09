@@ -38,10 +38,9 @@ class dataset(Dataset):
 		return seq, cond
 
 class bair_robot_pushing_dataset(dataset):
-	"""Customized dataset"""
 	def __init__(self, args, mode="train", transform=default_transform):
 		super(bair_robot_pushing_dataset, self).__init__(args, mode, transform)
-
+		
 		self.args = args
 		self.mode = mode
 		self.transforms = transform
@@ -58,8 +57,7 @@ class bair_robot_pushing_dataset(dataset):
 					continue
 				self.data_dirs.append("{}/{}/{}".format(self.mode_data_root, data_dir, idx_dir))
 
-		## Whether the random seed is already set or not
-		self.seed_is_set = True
+		self.seed_is_set = True ## Whether the random seed is already set or not
 
 	def __len__(self):
 		return len(self.data_dirs)

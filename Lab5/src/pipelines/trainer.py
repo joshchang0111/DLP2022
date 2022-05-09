@@ -146,7 +146,7 @@ class Trainer:
 			if epoch >= self.args.tfr_start_decay_epoch:
 				#raise NotImplementedError
 
-				#self.args.tfr_decay_step = (1 - 0) / self.args.niter
+				self.args.tfr_decay_step = (1 - 0) / self.args.niter
 				self.args.tfr = self.args.tfr - self.args.tfr_decay_step
 				if self.args.tfr < self.args.tfr_lower_bound:
 					self.args.tfr = self.args.tfr + self.args.tfr_decay_step
@@ -181,7 +181,7 @@ class Trainer:
 					_, _, psnr = finn_eval_seq(validate_seq[self.args.n_past:], pred_seq[self.args.n_past:])
 					psnr_list.append(psnr)
 				
-				ave_psnr = np.mean(np.concatenate(psnr))
+				ave_psnr = np.mean(np.concatenate(psnr_list))
 	
 				with open("{}/train_record.txt".format(self.args.log_dir), "a") as train_record:
 					train_record.write(("====================== validate psnr = {:.5f} ========================\n".format(ave_psnr)))
@@ -272,11 +272,11 @@ class Trainer:
 			   mse.detach().cpu().numpy()  / (self.args.n_past + self.args.n_future), \
 			   kld.detach().cpu().numpy()  / (self.args.n_past + self.args.n_future)
 
-	def test(self, test_data, test_loader, test_iterator):
+	def test(self, test_data, test_loader, test_iterator, test_set="test"):
 		"""Test only"""
 		print("Testing only, plotting results...")
 		psnr_list = []
-		for _ in tqdm(range(len(test_data) // self.args.batch_size)):
+		for _ in tqdm(range(len(test_data) // self.args.batch_size + 1)):
 			try:
 				test_seq, test_cond = next(test_iterator)
 			except StopIteration:
@@ -290,9 +290,11 @@ class Trainer:
 			_, _, psnr = finn_eval_seq(test_seq[self.args.n_past:], pred_seq[self.args.n_past:])
 			psnr_list.append(psnr)
 
-		ave_psnr = np.mean(np.concatenate(psnr))
-		print("[Epoch best] validate psnr = {:.5f}".format(ave_psnr))
-		
-		plot_pred(test_seq, test_cond, self.modules, "best", self.args, self.device)
-		plot_rec( test_seq, test_cond, self.modules, "best", self.args, self.device)
+		ave_psnr = np.mean(np.concatenate(psnr_list))
+		print("[Epoch best] {} psnr = {:.5f}".format(test_set, ave_psnr))
+
+		sample_idx = np.random.randint(0, self.args.batch_size)
+
+		plot_pred(test_seq, test_cond, self.modules, "best", self.args, self.device, sample_idx=sample_idx)
+		plot_rec( test_seq, test_cond, self.modules, "best", self.args, self.device, sample_idx=sample_idx)
 
