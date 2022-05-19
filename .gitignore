@@ -9,3 +9,7 @@ Lab3/src/2048_sample.cpp
 Lab4-2/dataset/data
 Lab5/dataset
 Lab5/logs
+Lab5/src/demo.sh
+Lab6/log
+Lab6/src/dqn-example.py
+Lab6/src/ddpg-example.py
