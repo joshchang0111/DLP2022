@@ -4,7 +4,7 @@
 *.zip
 */*/*/__pycache__/
 */checkpoints
-Lab3/src/2048_sample.cpp
+Lab3/src/2048_main/2048_sample.cpp
 */src/script1.sh
 Lab4-2/dataset/data
 Lab5/dataset
