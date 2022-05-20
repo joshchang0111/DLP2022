@@ -119,7 +119,7 @@ class DDPG:
 		self.gamma = args.gamma
 
 	def select_action(self, state, noise=True):
-		'''based on the behavior (actor) network and exploration noise'''
+		"""based on the behavior (actor) network and exploration noise"""
 		## TODO ##
 		if noise:
 			gaussian_noise = self._action_noise.sample()
@@ -265,7 +265,7 @@ def test(args, env, agent, writer):
 	rewards = []
 	for n_episode, seed in enumerate(seeds):
 		total_reward = 0
-		state = env.reset(seed=seed * 10)
+		state = env.reset(seed=seed)
 		## TODO ##
 		for t in itertools.count(start=1):
 			if args.render:

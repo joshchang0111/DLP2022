@@ -189,7 +189,7 @@ def test(args, env, agent, writer):
 	print("Start Testing")
 	action_space = env.action_space
 	epsilon = args.test_epsilon
-	seeds = (args.seed + i * 8 for i in range(10))
+	seeds = (args.seed + i for i in range(10))
 	rewards = []
 	for n_episode, seed in enumerate(seeds):
 		total_reward = 0
