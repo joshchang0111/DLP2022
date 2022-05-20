@@ -26,5 +26,5 @@ $ python dqn.py --logdir ../log/dqn
 ```
 Run the following command to traing and test DDPG.
 ```
-$ python ddpg.py --logdir ../log/dqn
+$ python ddpg.py --logdir ../log/ddpg
 ```
