@@ -7,6 +7,7 @@ In this course, there are 7 labs in total.
 - **Lab4-2**: Diabetic Retinopathy Detection
 - **Lab5**: Conditional VAE for Video Prediction
 - **Lab6**: Deep Q-Network and Deep Deterministic Policy Gradient
+- **Lab7**: Let's play GANs
 
 ## Environment
 - Ubuntu 20.04.3 LTS
