@@ -17,7 +17,7 @@ def parse_args():
 	## What to do
 	parser.add_argument("--train", action="store_true")
 	parser.add_argument("--test" , action="store_true")
-	parser.add_argument("--gan_type", default="infogan", choices=["infogan", "cgan", "wgan", "wgan-large"])
+	parser.add_argument("--gan_type", default="infogan", choices=["infogan", "cgan", "wgan", "wgan-large", "acwgan"])
 
 	## Hyper-parameters
 	parser.add_argument("--seed", default=1, type=int, help="manual seed")
@@ -55,6 +55,7 @@ def parse_args():
 	parser.add_argument("--result_dir", default="/mnt/hdd1/projects/DLP2022/Lab7/result", help="base directory to save predicted images")
 	parser.add_argument("--log_dir", default="/mnt/hdd1/projects/DLP2022/Lab7/log", help="base directory to save training logs")
 	parser.add_argument("--exp_name", default="GAN")
+	parser.add_argument("--test_file", default="test.json")
 
 	args = parser.parse_args()
 	return args

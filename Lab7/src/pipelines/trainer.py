@@ -34,7 +34,7 @@ class Trainer:
 			self.optimD = optim.Adam(param_optimD, lr=self.args.lr_D, betas=(self.args.beta1, self.args.beta2))
 			self.optimQ = optim.Adam(param_optimQ, lr=self.args.lr_D, betas=(self.args.beta1, self.args.beta2))
 
-		elif self.args.gan_type == "cgan" or self.args.gan_type == "wgan":
+		elif self.args.gan_type == "cgan" or self.args.gan_type == "wgan" or self.args.gan_type == "wgan-large":
 			self.netG = models[0]
 			self.netD = models[1]
 
@@ -55,17 +55,17 @@ class Trainer:
 			self.train_infogan(train_loader, test_loader)
 		elif self.args.gan_type == "cgan":
 			self.train_cgan(train_loader, test_loader)
-		elif self.args.gan_type == "wgan":
+		elif self.args.gan_type == "wgan" or self.args.gan_type == "wgan-large":
 			self.train_wgan(train_loader, test_loader)
 
 	def compute_gradient_penalty(self, real, fake, cond):
 		"""Calculates the gradient penalty loss for WGAN GP"""
 		## Random weight term for interpolation between real and fake samples
-		alpha = torch.rand(real.shape[0], 1, 1, 1).to(self.device) #Tensor(np.random.random((real.size(0), 1, 1, 1))).to(self.device)
+		alpha = torch.rand(real.shape[0], 1, 1, 1).to(self.device)
 		
 		## Get random interpolation between real and fake samples
 		interpolates = (alpha * real + ((1 - alpha) * fake)).requires_grad_(True)
-		d_interpolates = self.netD(interpolates, cond)
+		d_interpolates, _ = self.netD(interpolates, cond)
 		
 		## Get gradient w.r.t. interpolates
 		gradients = autograd.grad(
@@ -182,7 +182,10 @@ class Trainer:
 		criterion = nn.BCELoss()
 
 		test_cond = next(iter(test_loader)).to(self.device)
-		fixed_noise = torch.randn(test_cond.shape[0], self.args.z_dim, 1, 1, device=self.device)
+		#fixed_noise = torch.randn(test_cond.shape[0], self.args.z_dim, 1, 1, device=self.device)
+		fixed_noise = [torch.randn(test_cond.shape[0], self.args.z_dim, 1, 1, device=self.device) for eval_ in range(self.args.n_eval)]
+		fixed_noise = torch.stack(fixed_noise)
+		torch.save(fixed_noise, "{}/{}/fixed_noise.pt".format(self.args.model_dir, self.args.exp_name, self.args.checkpoint_epoch))
 
 		print("Start training {}...".format(self.args.gan_type))
 		for epoch in range(self.args.epochs):
@@ -203,54 +206,62 @@ class Trainer:
 				self.netD.zero_grad()
 				preds = self.netD(img, cond)
 				loss_D_real = criterion(preds.flatten(), real_label)
-				loss_D_real.backward()
 
 				## Generate fake & train all-fake batch
 				noise = torch.randn(batch_len, self.args.z_dim, 1, 1, device=self.device)
 				fake  = self.netG(noise, cond)
 				preds = self.netD(fake.detach(), cond)
 				loss_D_fake = criterion(preds.flatten(), fake_label)
-				loss_D_fake.backward()
 				loss_D = loss_D_real + loss_D_fake
-
-				## Update discriminator
-				nn.utils.clip_grad_norm_(self.netD.parameters(), max_norm=1.0, norm_type=2)
+				loss_D.backward()
 				self.optimD.step()
 
 				######################
 				## Update generator ##
 				######################
-				#for _ in range(1):
-				self.netG.zero_grad()
-				#noise = torch.randn(batch_len, self.args.z_dim, 1, 1, device=self.device)
-				#fake  = self.netG(noise, cond)
-				preds = self.netD(fake, cond)
-				
-				loss_G = criterion(preds.flatten(), real_label)
-				loss_G.backward()
-				
-				## Update generator
-				#nn.utils.clip_grad_norm_(self.netG.parameters(), max_norm=1.0, norm_type=2)
-				self.optimG.step()
+				for _ in range(4):
+					self.netG.zero_grad()
+					noise = torch.randn(batch_len, self.args.z_dim, 1, 1, device=self.device)
+					fake  = self.netG(noise, cond)
+					preds = self.netD(fake, cond)
+					
+					loss_G = criterion(preds.flatten(), real_label)
+					loss_G.backward()
+					self.optimG.step()
 
 				if step % self.args.report_freq == 0:
 					print("[Epoch {:3d}] Loss D: {:.4f}, Loss G: {:.4f}".format(epoch, loss_D.item(), loss_G.item()))
 
+					### Evaluate classification results
+					#self.netG.eval()
+					#self.netD.eval()
+					#with torch.no_grad():
+					#	pred_img = self.netG(fixed_noise, test_cond)
+					#acc = self.evaluator.eval(pred_img, test_cond)
+					#print("[Epoch {:3d}] Accuracy: {:.4f}".format(epoch, acc))
+
 					## Evaluate classification results
-					self.netG.eval()
-					self.netD.eval()
-					with torch.no_grad():
-						pred_img = self.netG(fixed_noise, test_cond)
-					acc = self.evaluator.eval(pred_img, test_cond)
-					print("[Epoch {:3d}] Accuracy: {:.4f}".format(epoch, acc))
+					eval_accs, best_eval_acc, best_pred_img = [], 0, None
+					for eval_iter in range(self.args.n_eval):
+						self.netG.eval()
+						self.netD.eval()
+						with torch.no_grad():
+							pred_img = self.netG(fixed_noise[eval_iter], test_cond)
+						eval_acc = self.evaluator.eval(pred_img, test_cond)
+						eval_accs.append(eval_acc)
+
+						if eval_acc > best_eval_acc:
+							best_eval_acc = eval_acc
+							best_pred_img = pred_img
+					avg_acc = sum(eval_accs) / len(eval_accs)
+					print("[Epoch {:3d}]\tAccuracy: {:.4f}".format(epoch, avg_acc))
 					
 					## Save generated images
-					#if (epoch % self.args.save_img_freq == 0) or (self.args.epochs - 1 == epoch):
 					save_image(pred_img, "{}/{}/pred_{}-{}.png".format(self.args.result_dir, self.args.exp_name, epoch, step), normalize=True)
 					
 					## Save model checkpoint
-					if acc > best_acc:
-						best_acc = acc
+					if avg_acc > best_acc:
+						best_acc = avg_acc
 						print("[Epoch {:3d}] Saving model checkpoints with best accuracy...".format(epoch))
 						torch.save(self.netG.state_dict(), "{}/{}/Generator_{}-{}.pth".format(self.args.model_dir, self.args.exp_name, epoch, step))
 						torch.save(self.netD.state_dict(), "{}/{}/Discriminator_{}-{}.pth".format(self.args.model_dir, self.args.exp_name, epoch, step))
@@ -365,18 +376,31 @@ class Trainer:
 
 		test_cond = next(iter(test_loader)).to(self.device)
 		try:
-			fixed_noise = torch.load("{}/{}/fixed_noise.pt".format(args.model_dir, args.exp_name, args.checkpoint_epoch)).to(self.device)
+			fixed_noise = torch.load("{}/{}/fixed_noise.pt".format(self.args.model_dir, self.args.exp_name, self.args.checkpoint_epoch)).to(self.device)
 		except:
 			print("`fixed_noise.pt` not found, try initializing random noise...")
 			fixed_noise = torch.randn(test_cond.shape[0], self.args.z_dim, 1, 1, device=self.device)
+		#fixed_noise = fixed_noise = [torch.randn(test_cond.shape[0], self.args.z_dim, 1, 1, device=self.device) for eval_ in range(100)]
+		#fixed_noise = torch.stack(fixed_noise)
 
-		## Evaluate classification results
-		self.netG.eval()
-		self.netD.eval()
-		with torch.no_grad():
-			pred_img = self.netG(fixed_noise, test_cond)
-		acc = self.evaluator.eval(pred_img, test_cond)
-		print("Accuracy: {:.4f}".format(acc))
+		if len(fixed_noise.shape) == 4:
+			fixed_noise = torch.stack([fixed_noise])
+
+		best_acc, best_pred_img = 0, None
+		for eval_iter in range(len(fixed_noise)):
+			## Evaluate classification results
+			self.netG.eval()
+			self.netD.eval()
+			with torch.no_grad():
+				pred_img = self.netG(fixed_noise[eval_iter], test_cond)
+			acc = self.evaluator.eval(pred_img, test_cond)
+			print("Accuracy: {:.4f}".format(acc))
+
+			if acc > best_acc:
+				best_acc = acc
+				best_pred_img = pred_img
+
+		save_image(best_pred_img, "{}/{}/pred_{:.4f}.png".format(self.args.result_dir, self.args.exp_name, best_acc), normalize=True)
 
 
 

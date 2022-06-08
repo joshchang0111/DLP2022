@@ -20,7 +20,7 @@ class iclevrDataset(Dataset):
 			data_dict = json.load(open("{}/train.json".format(self.data_root)))
 			self.data_list = list(data_dict.items())
 		elif self.mode == "test":
-			self.data_list = json.load(open("{}/test.json".format(self.data_root)))
+			self.data_list = json.load(open("{}/{}".format(self.data_root, self.args.test_file)))
 
 		self.transforms = transforms.Compose([
 			transforms.Resize(self.args.input_dim), 
