@@ -1,5 +1,5 @@
 # Deep Learning and Practice 2022 Spring
-Deep Learning and Practice 2022 Spring @ NYCU IOC.
+Deep Learning and Practice 2022 Spring @ NYCU IOC. \\
 In this course, there are 7 labs and 1 final project in total.
 - **Lab1**: Warm-up: Python + Pytorch
 - **Lab2**: Back Propagation
