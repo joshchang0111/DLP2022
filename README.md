@@ -1,5 +1,5 @@
 # Deep Learning and Practice 2022 Spring Labs
-In this course, there are 7 labs in total.
+In this course, there are 7 labs and 1 final project in total.
 - **Lab1**: Warm-up: Python + Pytorch
 - **Lab2**: Back Propagation
 - **Lab3**: 2048-Temporal Difference Learning
@@ -8,6 +8,7 @@ In this course, there are 7 labs in total.
 - **Lab5**: Conditional VAE for Video Prediction
 - **Lab6**: Deep Q-Network and Deep Deterministic Policy Gradient
 - **Lab7**: Let's play GANs
+- **Final Project**: Stance Detection with Transformers
 
 ## Environment
 - Ubuntu 20.04.3 LTS

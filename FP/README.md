@@ -1,4 +1,6 @@
 # Final Project - Stance Detection with Transformers
+Details of our method and experimental results are demonstrated in our presentation slides.
+
 ## Dependencies
 ```
 ipdb
